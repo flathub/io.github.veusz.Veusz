@@ -1,7 +1,7 @@
 diff -ruN a/support/veusz.appdata.xml b/support/veusz.appdata.xml
 --- a/support/veusz.appdata.xml	2020-12-06 18:44:42.000000000 +0700
-+++ b/support/veusz.appdata.xml	2021-04-22 04:22:26.789564591 +0700
-@@ -1,10 +1,12 @@
++++ b/support/veusz.appdata.xml	2021-05-14 16:14:33.713098508 +0700
+@@ -1,8 +1,10 @@
  <?xml version="1.0" encoding="UTF-8"?>
  <!-- Copyright 2014 Jeremy Sanders <jeremy@jeremysanders.net> -->
 -<application>
@@ -10,24 +10,31 @@ diff -ruN a/support/veusz.appdata.xml b/support/veusz.appdata.xml
 +<component type="desktop">
 +  <id>io.github.veusz.Veusz</id>
 +  <launchable type="desktop-id">io.github.veusz.Veusz.desktop</launchable>
-   <name>Veusz</name>
-   <summary>Scientific plotting package</summary>
 +  <metadata_license>CC0-1.0</metadata_license>
 +  <project_license>GPL-2.0-only</project_license>
+   <name>Veusz</name>
+   <summary>Scientific plotting package</summary>
    <description>
-     <p>
-       Veusz is an interactive graphical scientific plotting and
-@@ -29,5 +31,12 @@
-     <screenshot type="default" width="1248" height="702">https://veusz.github.io/screenshots/appdata-screenshot-0.png</screenshot>
+@@ -26,8 +28,20 @@
+     </p>
+   </description>
+   <screenshots>
+-    <screenshot type="default" width="1248" height="702">https://veusz.github.io/screenshots/appdata-screenshot-0.png</screenshot>
++    <screenshot type="default">https://veusz.github.io/screenshots/appdata-screenshot-0.png</screenshot>
++    <screenshot>https://veusz.github.io/screenshots/multiwins.png</screenshot>
++    <screenshot>https://veusz.github.io/screenshots/3d.png</screenshot>
++    <screenshot>https://veusz.github.io/screenshots/linux_mainwin.png</screenshot>
++    <screenshot>https://veusz.github.io/screenshots/import.png</screenshot>
++    <screenshot>https://veusz.github.io/screenshots/histogram.png</screenshot>
    </screenshots>
    <url type="homepage">https://veusz.github.io/</url>
 +  <url type="help">https://veusz.github.io/help-support/</url>
 +  <url type="bugtracker">https://github.com/veusz/veusz/issues</url>
-   <updatecontact>jeremy@jeremysanders.net</updatecontact>
--</application>
 +  <content_rating type="oars-1.1"/>
 +    <releases>
 +        <release version="3.3.1" date="2020-12-06">
 +        </release>    
 +    </releases>
-+</component> 
+   <updatecontact>jeremy@jeremysanders.net</updatecontact>
+-</application>
++</component>
