@@ -251,11 +251,7 @@ modules:
     build-commands:
       - python3 setup.py build_ext --sip-dir=/app/share/sip --sip-include-dir=/app/include
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
-      - install -Dm644 icons/veusz.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/${FLATPAK_ID}.svg
-      - install -Dm644 icons/veusz_32.png ${FLATPAK_DEST}/share/icons/hicolor/32x32/${FLATPAK_ID}.png
-      - install -Dm644 icons/veusz_48.png ${FLATPAK_DEST}/share/icons/hicolor/48x48/${FLATPAK_ID}.png
-      - install -Dm644 icons/veusz_64.png ${FLATPAK_DEST}/share/icons/hicolor/64x64/${FLATPAK_ID}.png
-      - install -Dm644 icons/veusz_128.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/${FLATPAK_ID}.png
+      - install -Dm644 icons/veusz.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
       - install -Dm644 support/veusz.appdata.xml ${FLATPAK_DEST}/share/appdata/${FLATPAK_ID}.appdata.xml
     sources:
       - type: git
