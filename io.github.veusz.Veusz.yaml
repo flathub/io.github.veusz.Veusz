@@ -20,7 +20,7 @@ cleanup:
   - "*.a"
 
 modules:
-  - name: python3-numpy
+  - name: python-numpy
     buildsystem: simple
     build-commands:
       - rm pyproject.toml
@@ -64,7 +64,7 @@ modules:
       - type: patch
         path: python-h5py-relax-dependency-versions.patch
 
-  - name: python3-sip
+  - name: python-sip
     config-opts:
       - --sip-module=PyQt5.sip
       - --bindir=/app/bin
@@ -90,7 +90,7 @@ modules:
     cleanup:
       - /bin
  
-  - name: python3-qt5
+  - name: python-qt5
     config-opts:
       - --verbose
       - --confirm-license
