@@ -4,6 +4,7 @@ runtime-version: '5.15'
 sdk: org.kde.Sdk
 command: veusz
 separate-locales: false
+rename-desktop-file: veusz.desktop
 rename-icon: veusz
 finish-args:
   - --share=ipc
@@ -255,6 +256,7 @@ modules:
       - install -Dm644 icons/veusz.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/veusz.svg
       - install -Dm644 icons/veusz_128.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/veusz.png
       - install -Dm644 support/veusz.appdata.xml ${FLATPAK_DEST}/share/appdata/${FLATPAK_ID}.appdata.xml
+      - install -Dm644 support/veusz.desktop ${FLATPAK_DEST}/share/applications/veusz.desktop
     sources:
       - type: git
         url: https://github.com/veusz/veusz
