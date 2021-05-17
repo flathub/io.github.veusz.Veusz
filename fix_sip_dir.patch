@@ -1,0 +1,12 @@
+diff -ruN a/pyqtdistutils.py b/pyqtdistutils.py
+--- a/pyqtdistutils.py	2021-05-17 00:01:34.000000000 +0700
++++ b/pyqtdistutils.py	2021-05-17 20:24:48.800704200 +0700
+@@ -301,7 +301,7 @@
+                 sip_exe,
+                 '-c', sip_builddir
+             ] + SIP_FLAGS.split() + [
+-                '-I', pyqt5_include_dir,
++                '-I', sip_dir,
+                 source
+             ]
+         )

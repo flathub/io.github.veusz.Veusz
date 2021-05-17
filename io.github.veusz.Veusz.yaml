@@ -32,14 +32,6 @@ modules:
         url: https://github.com/numpy/numpy
         tag: v1.20.2
         commit: b19ad5bfa396a4600a52a598a30a65d4e993f831
-
-  - name: hdf5
-    cleanup: 
-      - /share/hdf5_examples
-    sources:
-      - type: archive
-        url: https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.12/hdf5-1.12.0/src/hdf5-1.12.0.tar.gz
-        sha256: a62dcb276658cb78e6795dd29bf926ed7a9bc4edf6e77025cd2c689a8f97c17a
         
   - name: python-pkgconfig
     buildsystem: simple
@@ -51,6 +43,43 @@ modules:
       - type: archive
         url: https://files.pythonhosted.org/packages/ae/61/5a76ead90f9a62212c231b05231031e750f24e4dd2401d8c7f3f0527821b/pkgconfig-1.5.2.tar.gz
         sha256: 38d612488f0633755a2e7a8acab6c01d20d63dbc31af75e2a9ac98a6f638ca94
+        
+  - name: python3-packaging
+    buildsystem: simple
+    build-commands:
+      - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
+    sources:
+      - type: archive
+        url: https://files.pythonhosted.org/packages/86/3c/bcd09ec5df7123abcf695009221a52f90438d877a2f1499453c6938f5728/packaging-20.9.tar.gz
+        sha256: 5b327ac1320dc863dca72f4514ecc086f31186744b84a230374cc1fd776feae5
+        
+  - name: python3-Pyparsing
+    buildsystem: simple
+    build-commands:
+      - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
+    sources:
+      - type: archive
+        url: https://github.com/pyparsing/pyparsing/releases/download/pyparsing_2.4.7/pyparsing-2.4.7.tar.gz
+        sha256: c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1
+        
+  - name: python3-toml
+    buildsystem: simple
+    ensure-writable:
+      - /lib/python3.8/site-packages/easy-install.pth
+    build-commands:
+      - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
+    sources:
+      - type: archive
+        url: https://github.com/uiri/toml/archive/refs/tags/0.10.2.tar.gz
+        sha256: 71d4039bbdec91e3e7591ec5d6c943c58f9a2d17e5f6783acdc378f743fcdd2a
+
+  - name: hdf5
+    cleanup: 
+      - /share/hdf5_examples
+    sources:
+      - type: archive
+        url: https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.12/hdf5-1.12.0/src/hdf5-1.12.0.tar.gz
+        sha256: a62dcb276658cb78e6795dd29bf926ed7a9bc4edf6e77025cd2c689a8f97c17a
         
   - name: python-h5py
     buildsystem: simple
@@ -66,73 +95,61 @@ modules:
       - type: patch
         path: python-h5py-relax-dependency-versions.patch
 
-  - name: python-sip
-    config-opts:
-      - --sip-module=PyQt5.sip
-      - --bindir=/app/bin
-      - --destdir=/app/lib/python3.8/site-packages
-      - --incdir=/app/include
-    sources:
-      - type: archive
-        url: https://www.riverbankcomputing.com/static/Downloads/sip/4.19.25/sip-4.19.25.tar.gz
-        sha256: b39d93e937647807bac23579edbff25fe46d16213f708370072574ab1f1b4211
-  # Patch50
-  # make install should not strip (by default)
-      - type: patch
-        path: sip-4.18-no_strip.patch
-  #Patch51
-  #try not to rpath the world
-      - type: patch
-        path: sip-4.18-no_rpath.patch
-      - type: script
-        commands:
-          - processed="$( sed -e 's|--prefix=/app||' <<< "${@}" )";
-          - python3 "configure.py" ${processed};
-        dest-filename: configure
+  - name: sip
+    buildsystem: simple
+    build-commands:
+      - python3 setup.py install --prefix=/app --root=/
     cleanup:
       - /bin
+    sources:
+      - type: archive
+        url: https://files.pythonhosted.org/packages/33/e9/27730ac17713c0a80d81d8f3bb56213f1549d96f9dc183fd16a7eec6287c/sip-5.5.0.tar.gz
+        sha256: 5d024c419b30fea8a6de8c71a560c7ab0bc3c221fbfb14d55a5b865bd58eaac5
+
+  - name: PyQt5_sip
+    buildsystem: simple
+    build-commands:
+      - python3 setup.py install --prefix=/app --root=/
+    sources:
+      - type: archive
+        url: https://files.pythonhosted.org/packages/b1/40/dd8f081f04a12912b65417979bf2097def0af0f20c89083ada3670562ac5/PyQt5_sip-12.9.0.tar.gz
+        sha256: d3e4489d7c2b0ece9d203ae66e573939f7f60d4d29e089c9f11daa17cfeaae32
  
-  - name: python-qt5
-    config-opts:
-      - --verbose
-      - --confirm-license
-      - --assume-shared
-      - --sip-incdir=/app/include
-      - --bindir=/app/bin
-      - --destdir=/app/lib/python3.8/site-packages
-      - --designer-plugindir=/app/lib/plugins/designer
-      - --qml-plugindir=/app/lib/plugins/PyQt5
-      - QMAKE_CFLAGS_RELEASE=-I/usr/include/python3.8/
-      - QMAKE_CXXFLAGS_RELEASE=-I/usr/include/python3.8/
-      - --disable=QtBluetooth 
-      - --disable=QtWebKit 
-      - --disable=QtWebKitWidgets 
-      - --disable=QtNfc 
-      - --disable=QtPositioning
-      - --disable=QtNetwork
-      - --disable=QtTextToSpeech
-      - --disable=QtMultimediaWidgets 
-      - --disable=QtLocation 
-      - --disable=QtDesigner
-      - --disable=QtSensors 
-      - --disable=QtWebEngine 
-      - --disable=QtQuick 
-      - --disable=QtQml 
-      - --disable=QtTest 
-    build-options:
-      env:
-        QMAKEPATH: "/app/lib"
+  - name: PyQt5
+    buildsystem: simple
+    build-commands:
+      - PYVER=$(python3 -c "import sys;print(sys.version_info[1])") &&
+        QMAKEPATH=/app/lib python3 configure.py
+        --confirm-license
+        --bindir=/app/bin
+        --destdir=/app/lib/python3.${PYVER}/site-packages
+        --designer-plugindir=/app/lib/plugins/designer
+        --qml-plugindir=/app/lib/plugins/PyQt5
+        --sipdir=/app/share/sip
+        --stubsdir=/app/lib/python3.${PYVER}/site-packages/PyQt5
+        --disable=QtBluetooth 
+        --disable=QtWebKit 
+        --disable=QtWebKitWidgets 
+        --disable=QtNfc 
+        --disable=QtPositioning
+        --disable=QtNetwork
+        --disable=QtTextToSpeech
+        --disable=QtMultimediaWidgets 
+        --disable=QtLocation 
+        --disable=QtDesigner
+        --disable=QtSensors 
+        --disable=QtWebEngine 
+        --disable=QtQuick 
+        --disable=QtQml 
+        --disable=QtTest 
+      - make -j $FLATPAK_BUILDER_N_JOBS
+      - make install
+    cleanup:
+      - /bin
     sources:
       - type: archive
         url: https://files.pythonhosted.org/packages/8e/a4/d5e4bf99dd50134c88b95e926d7b81aad2473b47fde5e3e4eac2c69a8942/PyQt5-5.15.4.tar.gz
         sha256: 2a69597e0dd11caabe75fae133feca66387819fc9bc050f547e5551bce97e5be
-      - type: script
-        commands:
-           - processed="$( sed -e 's|prefix|sysroot|' <<< "${@}" )";
-           - python3 "configure.py" ${processed};
-        dest-filename: configure
-    cleanup:
-      - /bin
       
   - name: ghostscript
     config-opts:
@@ -233,7 +250,6 @@ modules:
         url: https://files.pythonhosted.org/packages/62/7e/d4fb56a1695fa65da0c8d3071855fa5408447b913c58c01933c2f81a269a/dbus-python-1.2.16.tar.gz
         sha256: 11238f1d86c995d8aed2e22f04a1e3779f0d70e587caffeab4857f3c662ed5a4
         
-   
   - name: python-iminuit
     buildsystem: simple
     build-commands:
@@ -251,7 +267,7 @@ modules:
     ensure-writable:
       - /lib/python3.8/site-packages/easy-install.pth
     build-commands:
-      - python3 setup.py build_ext --sip-dir=/app/share/sip --sip-include-dir=/app/include
+      - python3 setup.py build_ext --sip-dir=/app/share/sip
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
       - install -Dm644 icons/veusz.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/veusz.svg
       - install -Dm644 icons/veusz_128.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/veusz.png
@@ -265,6 +281,10 @@ modules:
         commit: 5ea57fe18b1470873758df0223694131475b9758
       - type: patch
         path: fix_appdata.patch
+        # Veusz expect SIP to be under PyQt5 subdirectory, but I don't know why I have different dir structure.
+        #https://github.com/veusz/veusz/issues/307
+      - type: patch
+        path: fix_sip_dir.patch
 
 
  
