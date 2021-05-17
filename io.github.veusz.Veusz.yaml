@@ -127,6 +127,21 @@ modules:
         --qml-plugindir=/app/lib/plugins/PyQt5
         --sipdir=/app/share/sip
         --stubsdir=/app/lib/python3.${PYVER}/site-packages/PyQt5
+        --disable=QtBluetooth 
+        --disable=QtWebKit 
+        --disable=QtWebKitWidgets 
+        --disable=QtNfc 
+        --disable=QtPositioning
+        --disable=QtNetwork
+        --disable=QtTextToSpeech
+        --disable=QtMultimediaWidgets 
+        --disable=QtLocation 
+        --disable=QtDesigner
+        --disable=QtSensors 
+        --disable=QtWebEngine 
+        --disable=QtQuick 
+        --disable=QtQml 
+        --disable=QtTest 
       - make -j $FLATPAK_BUILDER_N_JOBS
       - make install
     cleanup:
