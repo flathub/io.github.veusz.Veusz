@@ -98,7 +98,7 @@ modules:
           type: anitya
           project-id: 1303
           stable-only: true
-          url-template: https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.12/hdf5-$version/src/hdf5-$version.tar.gz
+          url-template: https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-$major.$minor/hdf5-$version/src/hdf5-$version.tar.gz
 
   - name: python-h5py
     buildsystem: simple
