@@ -18,8 +18,8 @@ cleanup:
   - /share/hdf5_examples
   - /share/man
   - /share/sip
-  - "*.la"
-  - "*.a"
+  - '*.la'
+  - '*.a'
 
 modules:
   - name: python-numpy
@@ -28,11 +28,13 @@ modules:
       - rm pyproject.toml
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
-      - type: git
-        url: https://github.com/numpy/numpy
-        tag: v1.20.2
-        commit: b19ad5bfa396a4600a52a598a30a65d4e993f831
-        
+      - type: archive
+        url: https://files.pythonhosted.org/packages/0b/a7/e724c8df240687b5fd62d8c71f1a6709d455c4c09432c7412e3e64f4cbe5/numpy-1.21.1.zip
+        sha256: dff4af63638afcc57a3dfb9e4b26d434a7a602d225b42d746ea7fe2edf1342fd
+        x-checker-data:
+          type: pypi
+          name: numpy
+
   - name: python-pkgconfig
     buildsystem: simple
     ensure-writable:
@@ -41,27 +43,36 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/ae/61/5a76ead90f9a62212c231b05231031e750f24e4dd2401d8c7f3f0527821b/pkgconfig-1.5.2.tar.gz
-        sha256: 38d612488f0633755a2e7a8acab6c01d20d63dbc31af75e2a9ac98a6f638ca94
-        
+        url: https://files.pythonhosted.org/packages/4f/97/911b58ba0edcb2fb4342b2456f4be2f7619860c8ec9c58432f6b64d30124/pkgconfig-1.5.4.tar.gz
+        sha256: c34503829fd226822fd93c902b1cf275516908a023a24be0a02ba687f3a00399
+        x-checker-data:
+          type: pypi
+          name: pkgconfig
+
   - name: python3-packaging
     buildsystem: simple
     build-commands:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/86/3c/bcd09ec5df7123abcf695009221a52f90438d877a2f1499453c6938f5728/packaging-20.9.tar.gz
-        sha256: 5b327ac1320dc863dca72f4514ecc086f31186744b84a230374cc1fd776feae5
-        
+        url: https://files.pythonhosted.org/packages/df/86/aef78bab3afd461faecf9955a6501c4999933a48394e90f03cd512aad844/packaging-21.0.tar.gz
+        sha256: 7dc96269f53a4ccec5c0670940a4281106dd0bb343f47b7471f779df49c2fbe7
+        x-checker-data:
+          type: pypi
+          name: packaging
+
   - name: python3-Pyparsing
     buildsystem: simple
     build-commands:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://github.com/pyparsing/pyparsing/releases/download/pyparsing_2.4.7/pyparsing-2.4.7.tar.gz
+        url: https://files.pythonhosted.org/packages/c1/47/dfc9c342c9842bbe0036c7f763d2d6686bcf5eb1808ba3e170afdb282210/pyparsing-2.4.7.tar.gz
         sha256: c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1
-        
+        x-checker-data:
+          type: pypi
+          name: Pyparsing
+
   - name: python3-toml
     buildsystem: simple
     ensure-writable:
@@ -70,17 +81,25 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://github.com/uiri/toml/archive/refs/tags/0.10.2.tar.gz
-        sha256: 71d4039bbdec91e3e7591ec5d6c943c58f9a2d17e5f6783acdc378f743fcdd2a
+        url: https://files.pythonhosted.org/packages/be/ba/1f744cdc819428fc6b5084ec34d9b30660f6f9daaf70eead706e3203ec3c/toml-0.10.2.tar.gz
+        sha256: b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f
+        x-checker-data:
+          type: pypi
+          name: toml
 
   - name: hdf5
-    cleanup: 
+    cleanup:
       - /share/hdf5_examples
     sources:
       - type: archive
         url: https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.12/hdf5-1.12.0/src/hdf5-1.12.0.tar.gz
         sha256: a62dcb276658cb78e6795dd29bf926ed7a9bc4edf6e77025cd2c689a8f97c17a
-        
+        x-checker-data:
+          type: anitya
+          project-id: 1303
+          stable-only: true
+          url-template: https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-$major.$minor/hdf5-$version/src/hdf5-$version.tar.gz
+
   - name: python-h5py
     buildsystem: simple
     ensure-writable:
@@ -88,10 +107,12 @@ modules:
     build-commands:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
-      - type: git
-        url: https://github.com/h5py/h5py
-        tag: 3.2.1
-        commit: 7f918857e2a63477038afccda518ebd3159c13b2
+      - type: archive
+        url: https://files.pythonhosted.org/packages/61/0f/e7e57c4b87d027d74acf75e0fc49aff8aca87d6ff7b2e655c183a714044d/h5py-3.3.0.tar.gz
+        sha256: e0dac887d779929778b3cfd13309a939359cc9e74756fc09af7c527a82797186
+        x-checker-data:
+          type: pypi
+          name: h5py
       - type: patch
         path: python-h5py-relax-dependency-versions.patch
 
@@ -114,34 +135,21 @@ modules:
       - type: archive
         url: https://files.pythonhosted.org/packages/b1/40/dd8f081f04a12912b65417979bf2097def0af0f20c89083ada3670562ac5/PyQt5_sip-12.9.0.tar.gz
         sha256: d3e4489d7c2b0ece9d203ae66e573939f7f60d4d29e089c9f11daa17cfeaae32
- 
+        x-checker-data:
+          type: pypi
+          name: PyQt5-sip
+
   - name: PyQt5
     buildsystem: simple
     build-commands:
-      - PYVER=$(python3 -c "import sys;print(sys.version_info[1])") &&
-        QMAKEPATH=/app/lib python3 configure.py
-        --confirm-license
-        --bindir=/app/bin
-        --destdir=/app/lib/python3.${PYVER}/site-packages
-        --designer-plugindir=/app/lib/plugins/designer
-        --qml-plugindir=/app/lib/plugins/PyQt5
-        --sipdir=/app/share/sip
-        --stubsdir=/app/lib/python3.${PYVER}/site-packages/PyQt5
-        --disable=QtBluetooth 
-        --disable=QtWebKit 
-        --disable=QtWebKitWidgets 
-        --disable=QtNfc 
-        --disable=QtPositioning
-        --disable=QtNetwork
-        --disable=QtTextToSpeech
-        --disable=QtMultimediaWidgets 
-        --disable=QtLocation 
-        --disable=QtDesigner
-        --disable=QtSensors 
-        --disable=QtWebEngine 
-        --disable=QtQuick 
-        --disable=QtQml 
-        --disable=QtTest 
+      - PYVER=$(python3 -c "import sys;print(sys.version_info[1])") && QMAKEPATH=/app/lib
+        python3 configure.py --confirm-license --bindir=/app/bin --destdir=/app/lib/python3.${PYVER}/site-packages
+        --designer-plugindir=/app/lib/plugins/designer --qml-plugindir=/app/lib/plugins/PyQt5
+        --sipdir=/app/share/sip --stubsdir=/app/lib/python3.${PYVER}/site-packages/PyQt5
+        --disable=QtBluetooth --disable=QtWebKit --disable=QtWebKitWidgets --disable=QtNfc
+        --disable=QtPositioning --disable=QtNetwork --disable=QtTextToSpeech --disable=QtMultimediaWidgets
+        --disable=QtLocation --disable=QtDesigner --disable=QtSensors --disable=QtWebEngine
+        --disable=QtQuick --disable=QtQml --disable=QtTest
       - make -j $FLATPAK_BUILDER_N_JOBS
       - make install
     cleanup:
@@ -150,7 +158,10 @@ modules:
       - type: archive
         url: https://files.pythonhosted.org/packages/8e/a4/d5e4bf99dd50134c88b95e926d7b81aad2473b47fde5e3e4eac2c69a8942/PyQt5-5.15.4.tar.gz
         sha256: 2a69597e0dd11caabe75fae133feca66387819fc9bc050f547e5551bce97e5be
-      
+        x-checker-data:
+          type: pypi
+          name: PyQt5
+
   - name: ghostscript
     config-opts:
       - --enable-dynamic
@@ -170,9 +181,14 @@ modules:
       - type: archive
         url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9540/ghostscript-9.54.0.tar.gz
         sha256: 0646bb97f6f4d10a763f4919c54fa28b4fbdd3dff8e7de3410431c81762cade0
+        x-checker-data:
+          type: anitya
+          project-id: 1157
+          stable-only: true
+          url-template: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9540/ghostscript-$version.tar.gz
     cleanup:
-       - /share/doc
-       
+      - /share/doc
+
   - name: python-astropy
     buildsystem: simple
     build-commands:
@@ -181,6 +197,9 @@ modules:
       - type: archive
         url: https://files.pythonhosted.org/packages/4e/a6/4a1576e4a51b10b4b7440cbd36fc3c71fb69fb634672ce0725de614182ca/astropy-4.2.1.tar.gz
         sha256: ed483e472241153daec45f4b0c318c2c63d9f47305b78e6e63d32fc388c18427
+        x-checker-data:
+          type: pypi
+          name: astropy
     modules:
       - name: python-setuptools-scm
         buildsystem: simple
@@ -190,6 +209,9 @@ modules:
           - type: archive
             url: https://files.pythonhosted.org/packages/57/38/930b1241372a9f266a7df2b184fb9d4f497c2cef2e016b014f82f541fe7c/setuptools_scm-6.0.1.tar.gz
             sha256: d1925a69cb07e9b29416a275b9fadb009a23c148ace905b2fb220649a6c18e92
+            x-checker-data:
+              type: pypi
+              name: setuptools-scm
       - name: python-extension-helpers
         buildsystem: simple
         build-commands:
@@ -198,39 +220,43 @@ modules:
           - type: archive
             url: https://files.pythonhosted.org/packages/81/78/056daee475dfc41cc0b62540388703cddcae4d4f6bef10c6ce1aea76ebaf/extension-helpers-0.1.tar.gz
             sha256: ac8a6fe91c6d98986a51a9f08ca0c7945f8fd70d95b662ced4040ae5eb973882
+            x-checker-data:
+              type: pypi
+              name: extension-helpers
       - name: python-jinja2
         buildsystem: simple
         build-commands:
           - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
         sources:
           - type: archive
-            url: https://files.pythonhosted.org/packages/4f/e7/65300e6b32e69768ded990494809106f87da1d436418d5f1367ed3966fd7/Jinja2-2.11.3.tar.gz
-            sha256: a6d58433de0ae800347cab1fa3043cebbabe8baa9d29e668f1c768cb87a333c6
+            url: https://files.pythonhosted.org/packages/39/11/8076571afd97303dfeb6e466f27187ca4970918d4b36d5326725514d3ed3/Jinja2-3.0.1.tar.gz
+            sha256: 703f484b47a6af502e743c9122595cc812b0271f661722403114f71a79d0f5a4
+            x-checker-data:
+              type: pypi
+              name: jinja2
       - name: python-MarkupSafe
         buildsystem: simple
         build-commands:
           - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
         sources:
           - type: archive
-            url: https://files.pythonhosted.org/packages/b9/2e/64db92e53b86efccfaea71321f597fa2e1b2bd3853d8ce658568f7a13094/MarkupSafe-1.1.1.tar.gz
-            sha256: 29872e92839765e546828bb7754a68c418d927cd064fd4708fab9fe9c8bb116b
-      - name: python-packaging
-        buildsystem: simple
-        build-commands:
-          - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
-        sources:
-          - type: archive
-            url: https://files.pythonhosted.org/packages/86/3c/bcd09ec5df7123abcf695009221a52f90438d877a2f1499453c6938f5728/packaging-20.9.tar.gz
-            sha256: 5b327ac1320dc863dca72f4514ecc086f31186744b84a230374cc1fd776feae5
+            url: https://files.pythonhosted.org/packages/bf/10/ff66fea6d1788c458663a84d88787bae15d45daa16f6b3ef33322a51fc7e/MarkupSafe-2.0.1.tar.gz
+            sha256: 594c67807fb16238b30c44bdf74f36c02cdf22d1c8cda91ef8a0ed8dabf5620a
+            x-checker-data:
+              type: pypi
+              name: MarkupSafe
       - name: python-pyerfa
         buildsystem: simple
         build-commands:
           - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
         sources:
           - type: archive
-            url: https://files.pythonhosted.org/packages/e3/af/ae39c2b1f652895238888f186579b7eedb9f55fdbde78ad75f34597059bc/pyerfa-1.7.2.tar.gz
-            sha256: 31776213ec36e6bb5382b526be02e417b8697d791c6837199342c19e7dabe8e8
-        
+            url: https://files.pythonhosted.org/packages/03/71/47b58cbbf8350209f0be27177d9ecc15df8956bbf00af74cb9cd2abc5df1/pyerfa-2.0.0.tar.gz
+            sha256: f904231e1a570f94440e06140799590895107f942847b52a753ce81c9609162d
+            x-checker-data:
+              type: pypi
+              name: pyerfa
+
   - name: python-pyemf
     buildsystem: simple
     build-commands:
@@ -240,7 +266,7 @@ modules:
         url: https://github.com/jeremysanders/pyemf
         tag: master
         commit: 830e61008af8acf1830e5c91dc876313a771afdb
-        
+
   - name: python-dbus-python
     buildsystem: simple
     build-commands:
@@ -249,15 +275,21 @@ modules:
       - type: archive
         url: https://files.pythonhosted.org/packages/62/7e/d4fb56a1695fa65da0c8d3071855fa5408447b913c58c01933c2f81a269a/dbus-python-1.2.16.tar.gz
         sha256: 11238f1d86c995d8aed2e22f04a1e3779f0d70e587caffeab4857f3c662ed5a4
-        
+        x-checker-data:
+          type: pypi
+          name: dbus-python
+
   - name: python-iminuit
     buildsystem: simple
     build-commands:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
-      - type: git
-        url: https://github.com/scikit-hep/iminuit
-        tag: v2.4.0
+      - type: archive
+        url: https://files.pythonhosted.org/packages/a0/25/5836e7968df82b20bec8bbed50e0e3de53e2f5225878742479f1ac6808ce/iminuit-2.7.0.tar.gz
+        sha256: ff2183814c5c3a1cfa77355249bb3706e06e886c9a07b00267ff3088ce58e5b3
+        x-checker-data:
+          type: pypi
+          name: iminuit
         # Fix pybind11 cannot find python3 from u/tinywrkb
       - type: patch
         path: pybind11_include_dirs.patch
@@ -279,6 +311,9 @@ modules:
         url: https://github.com/veusz/veusz
         tag: veusz-3.3.1
         commit: 5ea57fe18b1470873758df0223694131475b9758
+        x-checker-data:
+          type: git
+          tag-pattern: ^veusz-([\d\.]+)$
       - type: patch
         path: fix_appdata.patch
         # Veusz expect SIP to be under PyQt5 subdirectory, but I don't know why I have different dir structure.
@@ -287,4 +322,4 @@ modules:
         path: fix_sip_dir.patch
 
 
- 
+
