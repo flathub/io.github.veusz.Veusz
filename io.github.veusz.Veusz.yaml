@@ -43,8 +43,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/4f/97/911b58ba0edcb2fb4342b2456f4be2f7619860c8ec9c58432f6b64d30124/pkgconfig-1.5.4.tar.gz
-        sha256: c34503829fd226822fd93c902b1cf275516908a023a24be0a02ba687f3a00399
+        url: https://files.pythonhosted.org/packages/c4/e0/e05fee8b5425db6f83237128742e7e5ef26219b687ab8f0d41ed0422125e/pkgconfig-1.5.5.tar.gz
+        sha256: deb4163ef11f75b520d822d9505c1f462761b4309b1bb713d08689759ea8b899
         x-checker-data:
           type: pypi
           name: pkgconfig
