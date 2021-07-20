@@ -319,7 +319,7 @@ modules:
         commit: 5ea57fe18b1470873758df0223694131475b9758
         x-checker-data:
           type: git
-          tag-pattern: ^veusz-([\d\.]+)$
+          tag-pattern: ^(veusz-[\d.]+)$
       - type: patch
         path: fix_appdata.patch
         # Veusz expect SIP to be under PyQt5 subdirectory, but I don't know why I have different dir structure.
