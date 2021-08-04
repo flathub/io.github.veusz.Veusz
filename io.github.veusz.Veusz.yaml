@@ -201,8 +201,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/1d/85/a6452d1dcf1dbd50c9d3a4eda17c3b72e7e550c7a31a161e7f9357c9e5b9/astropy-4.3.tar.gz
-        sha256: 6c1d1f0896e5d33851442865aa0ec4a2643dfaecb8853e9f4dca6d0541798744
+        url: https://files.pythonhosted.org/packages/cd/ac/5b1b78464aa7903ce8ec81b9a523d481668d37a88da83272568833394693/astropy-4.3.post1.tar.gz
+        sha256: 1b9f976f32675ae715bd38fcfb3540fcf01f6be1d75266c39b6fb085adac9410
         x-checker-data:
           type: pypi
           name: astropy
@@ -291,8 +291,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/c6/42/49459bc40b4ed0934dedfba0bb11504cb53cee2b57821a74ddfa5b890b2e/iminuit-2.8.0.tar.gz
-        sha256: 9ce160453e08ffc4f12a9f1f4364e461b0ce4c472048c1a58eeaa46a40af9d56
+        url: https://files.pythonhosted.org/packages/69/1f/aca35c2ba7fda13656087b1386e68dc1ed39ac7a8e524770b645db4129c6/iminuit-2.8.1.tar.gz
+        sha256: f2220e82f76e7034dbf6d4eae527677fa3615b4fcdf483a54617838191dc9f74
         x-checker-data:
           type: pypi
           name: iminuit
