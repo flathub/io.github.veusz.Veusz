@@ -201,8 +201,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/cd/ac/5b1b78464aa7903ce8ec81b9a523d481668d37a88da83272568833394693/astropy-4.3.post1.tar.gz
-        sha256: 1b9f976f32675ae715bd38fcfb3540fcf01f6be1d75266c39b6fb085adac9410
+        url: https://files.pythonhosted.org/packages/10/d4/64a538ec598035dc3131953bf891cf1df9757dfbd084ab49dc51aae7d53f/astropy-4.3.1.tar.gz
+        sha256: 2d3951223b4eb7f368fcad8c8340d27374c5d8e3b635a636275acdb38f35cd51
         x-checker-data:
           type: pypi
           name: astropy
