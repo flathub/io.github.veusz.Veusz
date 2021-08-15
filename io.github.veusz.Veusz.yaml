@@ -291,8 +291,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/69/1f/aca35c2ba7fda13656087b1386e68dc1ed39ac7a8e524770b645db4129c6/iminuit-2.8.1.tar.gz
-        sha256: f2220e82f76e7034dbf6d4eae527677fa3615b4fcdf483a54617838191dc9f74
+        url: https://files.pythonhosted.org/packages/97/3c/8ff5e14dc230250614fa161e4c4181250b87f7a54f29ddb01769fb5fa5b5/iminuit-2.8.2.tar.gz
+        sha256: ffba627a638fe233bbef03e91af6063c1e5d62405327219b03f0abf50196a95b
         x-checker-data:
           type: pypi
           name: iminuit
