@@ -29,8 +29,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/0b/a7/e724c8df240687b5fd62d8c71f1a6709d455c4c09432c7412e3e64f4cbe5/numpy-1.21.1.zip
-        sha256: dff4af63638afcc57a3dfb9e4b26d434a7a602d225b42d746ea7fe2edf1342fd
+        url: https://files.pythonhosted.org/packages/3a/be/650f9c091ef71cb01d735775d554e068752d3ff63d7943b26316dc401749/numpy-1.21.2.zip
+        sha256: 423216d8afc5923b15df86037c6053bf030d15cc9e3224206ef868c2d63dd6dc
         x-checker-data:
           type: pypi
           name: numpy
@@ -43,8 +43,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/4f/97/911b58ba0edcb2fb4342b2456f4be2f7619860c8ec9c58432f6b64d30124/pkgconfig-1.5.4.tar.gz
-        sha256: c34503829fd226822fd93c902b1cf275516908a023a24be0a02ba687f3a00399
+        url: https://files.pythonhosted.org/packages/c4/e0/e05fee8b5425db6f83237128742e7e5ef26219b687ab8f0d41ed0422125e/pkgconfig-1.5.5.tar.gz
+        sha256: deb4163ef11f75b520d822d9505c1f462761b4309b1bb713d08689759ea8b899
         x-checker-data:
           type: pypi
           name: pkgconfig
@@ -114,8 +114,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/61/0f/e7e57c4b87d027d74acf75e0fc49aff8aca87d6ff7b2e655c183a714044d/h5py-3.3.0.tar.gz
-        sha256: e0dac887d779929778b3cfd13309a939359cc9e74756fc09af7c527a82797186
+        url: https://files.pythonhosted.org/packages/7b/c5/d71a944e0637a0db5a0f779c6b757253149fec439a5cafd5fc87e277658b/h5py-3.4.0.tar.gz
+        sha256: ee1c683d91ab010d5e85cb61e8f9e7ee0d8eab545bf3dd50a9618f1d0e8f615e
         x-checker-data:
           type: pypi
           name: h5py
@@ -201,8 +201,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/4e/a6/4a1576e4a51b10b4b7440cbd36fc3c71fb69fb634672ce0725de614182ca/astropy-4.2.1.tar.gz
-        sha256: ed483e472241153daec45f4b0c318c2c63d9f47305b78e6e63d32fc388c18427
+        url: https://files.pythonhosted.org/packages/10/d4/64a538ec598035dc3131953bf891cf1df9757dfbd084ab49dc51aae7d53f/astropy-4.3.1.tar.gz
+        sha256: 2d3951223b4eb7f368fcad8c8340d27374c5d8e3b635a636275acdb38f35cd51
         x-checker-data:
           type: pypi
           name: astropy
@@ -213,11 +213,23 @@ modules:
           - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
         sources:
           - type: archive
-            url: https://files.pythonhosted.org/packages/57/38/930b1241372a9f266a7df2b184fb9d4f497c2cef2e016b014f82f541fe7c/setuptools_scm-6.0.1.tar.gz
-            sha256: d1925a69cb07e9b29416a275b9fadb009a23c148ace905b2fb220649a6c18e92
+            url: https://files.pythonhosted.org/packages/4b/0d/ecb9595fae02467edba5023eb8a23c688d2b438a6a8d1a9e2b8649faf23d/setuptools_scm-6.3.2.tar.gz
+            sha256: a49aa8081eeb3514eb9728fa5040f2eaa962d6c6f4ec9c32f6c1fba88f88a0f2
             x-checker-data:
               type: pypi
               name: setuptools-scm
+      - name: python-flit-core
+        buildsystem: simple
+        build-commands:
+          - pip3 install . --prefix=/app --no-index --find-links .
+        sources:
+          - type: archive
+            url: https://files.pythonhosted.org/packages/6f/cd/3653de7b1d61f0ef95f2459ac752f23a91dbc84f991787201aa52d0cf1cc/flit_core-3.3.0.tar.gz
+            sha256: b1404accffd6504b5f24eeca9ec5d3c877f828d16825348ba81515fa084bd5f0
+            x-checker-data:
+              type: pypi
+              name: flit-core
+      - python3-tomli.json
       - name: python-extension-helpers
         buildsystem: simple
         build-commands:
@@ -235,8 +247,8 @@ modules:
           - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
         sources:
           - type: archive
-            url: https://files.pythonhosted.org/packages/39/11/8076571afd97303dfeb6e466f27187ca4970918d4b36d5326725514d3ed3/Jinja2-3.0.1.tar.gz
-            sha256: 703f484b47a6af502e743c9122595cc812b0271f661722403114f71a79d0f5a4
+            url: https://files.pythonhosted.org/packages/f8/86/7c0eb6e8b05385d1ce682abc0f994abd1668e148fb52603fa86e15d4c110/Jinja2-3.0.2.tar.gz
+            sha256: 827a0e32839ab1600d4eb1c4c33ec5a8edfbc5cb42dafa13b81f182f97784b45
             x-checker-data:
               type: pypi
               name: jinja2
@@ -291,8 +303,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/a0/25/5836e7968df82b20bec8bbed50e0e3de53e2f5225878742479f1ac6808ce/iminuit-2.7.0.tar.gz
-        sha256: ff2183814c5c3a1cfa77355249bb3706e06e886c9a07b00267ff3088ce58e5b3
+        url: https://files.pythonhosted.org/packages/a4/4c/2fcaa9e4fab784ea4b04c722946a66efaa4ab3658882ef2fb9e596f7ab65/iminuit-2.8.3.tar.gz
+        sha256: 8e22d81a53ce3316f0253bf0b7831bd72ac1122ca78896c2ee2e585178c5c9ae
         x-checker-data:
           type: pypi
           name: iminuit
