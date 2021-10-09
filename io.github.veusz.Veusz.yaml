@@ -327,8 +327,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/veusz/veusz
-        tag: veusz-3.3.1
-        commit: 5ea57fe18b1470873758df0223694131475b9758
+        tag: veusz-3.3.99
+        commit: 3605b2323fbf14b203f4249cda337edc67401ec6
         x-checker-data:
           type: git
           tag-pattern: ^(veusz-[\d.]+)$
