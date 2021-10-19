@@ -5,7 +5,6 @@ sdk: org.kde.Sdk
 command: veusz
 separate-locales: false
 rename-desktop-file: veusz.desktop
-rename-icon: veusz
 finish-args:
   - --share=ipc
   - --socket=fallback-x11
@@ -282,7 +281,7 @@ modules:
       - python3 setup.py build_ext --library-dirs=/app/lib
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
       - install -Dm644 icons/veusz.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/veusz.svg
-      - install -Dm644 icons/veusz_128.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/veusz.png
+      - install -Dm644 icons/veusz_128.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png
       - install -Dm644 support/veusz.appdata.xml ${FLATPAK_DEST}/share/appdata/${FLATPAK_ID}.appdata.xml
       - install -Dm644 support/veusz.desktop ${FLATPAK_DEST}/share/applications/veusz.desktop
       - desktop-file-edit --set-key=Icon --set-value=${FLATPAK_ID} ${FLATPAK_DEST}/share/applications/veusz.desktop
