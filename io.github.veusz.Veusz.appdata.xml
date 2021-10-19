@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>io.github.veusz.Veusz</id>
+  <launchable type="desktop-id">Veusz.desktop</launchable>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0-only</project_license>
+  <name>Veusz</name>
+  <summary>Scientific plotting package</summary>
+  <description>
+    <p>
+      Veusz is an interactive graphical scientific plotting and
+      graphing package. It is designed to produce publication-ready
+      PDF output. SVG, EMF and bitmap export formats are also
+      supported. Data can be read from text, CSV, HDF5 or FITS
+      files. In addition, you can also enter, manipulate or examine
+      data from within the application.  The program also provides a
+      command line and scripting interface (based on Python) to its
+      plotting facilities. It can also act as a Python plotting
+      module.
+    </p>
+    <p>
+      In Veusz plots are created by building up plotting widgets with
+      a consistent object-based interface. Plotting types support by
+      Veusz include the following: x-y, function, contour, image,
+      stepped, date, vector field, box, polar, ternary, nested and
+      stacked. Plots can also include multiple axes.
+    </p>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+        <image>https://veusz.github.io/screenshots/appdata-screenshot-0.png</image>
+    </screenshot>
+    <screenshot>
+        <image>https://veusz.github.io/screenshots/multiwins.png</image>
+    </screenshot>
+    <screenshot>
+        <image>https://veusz.github.io/screenshots/3d.png</image>
+    </screenshot>
+    <screenshot>
+        <image>https://veusz.github.io/screenshots/linux_mainwin.png</image>
+    </screenshot>
+    <screenshot>
+        <image>https://veusz.github.io/screenshots/import.png</image>
+    </screenshot>
+    <screenshot>
+        <image>https://veusz.github.io/screenshots/histogram.png</image>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">https://veusz.github.io/</url>
+  <url type="help">https://veusz.github.io/help-support/</url>
+  <url type="bugtracker">https://github.com/veusz/veusz/issues</url>
+  <content_rating type="oars-1.1"/>
+    <releases>
+        <release version="3.4" date="2021-10-17">
+        </release>    
+    </releases>
+  <updatecontact>jeremy@jeremysanders.net</updatecontact>
+</component>
