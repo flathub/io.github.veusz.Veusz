@@ -1,0 +1,73 @@
+{
+    "name": "pyqt5",
+    "config-opts": [
+        "--concatenate=1",
+        "--confirm-license",
+        "--debug",
+        "--enable=QtCore",
+        "--enable=QtDBus",
+        "--enable=QtGui",
+        "--enable=QtOpenGL",
+        "--enable=QtPrintSupport",
+        "--enable=QtQml",
+        "--enable=QtSvg",
+        "--enable=QtWidgets",
+        "--no-designer-plugin",
+        "--no-docstrings",
+        "--no-make",
+        "--no-qml-plugin",
+        "--no-tools",
+        "--verbose",
+        "--api-dir=/app/share/qt/qsci/api/python",
+        "--qmake-setting=QMAKE_CFLAGS_RELEASE='-I/usr/include/python_pyver/'",
+        "--qmake-setting=QMAKE_CXXFLAGS_RELEASE='-I/usr/include/python_pyver/'",
+        "--target-dir=/app/lib/python_pyver/site-packages",
+        "--qt-shared"
+    ],
+    "make-args": [
+        "--directory=build"
+    ],
+    "make-install-args": [
+        "--directory=build"
+    ],
+    "sources": [
+        {
+            "type": "archive",
+            "url": "https://files.pythonhosted.org/packages/8e/a4/d5e4bf99dd50134c88b95e926d7b81aad2473b47fde5e3e4eac2c69a8942/PyQt5-5.15.4.tar.gz",
+            "sha256": "2a69597e0dd11caabe75fae133feca66387819fc9bc050f547e5551bce97e5be",
+            "x-checker-data": {
+                "type": "pypi",
+                "name": "PyQt5"
+            }
+        },
+        {
+            "type": "script",
+            "commands": [
+                "export _pyver=$(python -c 'import sys; print(\"%s.%s\" %sys.version_info[0:2])')",
+                "processed=$(sed 's|--prefix=/app||;s|_pyver|'${_pyver}'|g' <<< $@)",
+                "sip-build $processed",
+                "echo 'trick flatpak-builder into running make' > Makefile"
+            ],
+            "dest-filename": "configure"
+        },
+        {
+            "type": "shell",
+            "commands": [
+                "echo '[tool.sip.bindings.QtGui]' >> pyproject.toml",
+                "echo 'disabled-features = [\"PyQt_Desktop_OpenGL\"]' >> pyproject.toml"
+            ],
+            "only-arches": [
+                "aarch64"
+            ]
+        }
+    ],
+    "cleanup": [
+        "/share/qt"
+    ],
+    "modules": [
+        "python-opengl/python-opengl.json",
+        "sip/sip.json",
+        "pyqt-builder/pyqt-builder.json",
+        "pyqt5-sip/pyqt5-sip.json"
+    ]
+}
