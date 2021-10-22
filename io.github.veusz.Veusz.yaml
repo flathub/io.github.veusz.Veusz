@@ -27,8 +27,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/3a/be/650f9c091ef71cb01d735775d554e068752d3ff63d7943b26316dc401749/numpy-1.21.2.zip
-        sha256: 423216d8afc5923b15df86037c6053bf030d15cc9e3224206ef868c2d63dd6dc
+        url: https://files.pythonhosted.org/packages/5f/d6/ad58ded26556eaeaa8c971e08b6466f17c4ac4d786cd3d800e26ce59cc01/numpy-1.21.3.zip
+        sha256: 63571bb7897a584ca3249c86dd01c10bcb5fe4296e3568b2e9c1a55356b6410e
         x-checker-data:
           type: pypi
           name: numpy
@@ -112,8 +112,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/7b/c5/d71a944e0637a0db5a0f779c6b757253149fec439a5cafd5fc87e277658b/h5py-3.4.0.tar.gz
-        sha256: ee1c683d91ab010d5e85cb61e8f9e7ee0d8eab545bf3dd50a9618f1d0e8f615e
+        url: https://files.pythonhosted.org/packages/56/c7/9410b3802f456c702f6e0ccebf82e628f42a30921f61a232e26e424d95d4/h5py-3.5.0.tar.gz
+        sha256: 77c7be4001ac7d3ed80477de5b6942501d782de1bbe4886597bdfec2a7ab821f
         x-checker-data:
           type: pypi
           name: h5py
@@ -176,8 +176,8 @@ modules:
           - pip3 install . --prefix=/app --no-index --find-links .
         sources:
           - type: archive
-            url: https://files.pythonhosted.org/packages/6f/cd/3653de7b1d61f0ef95f2459ac752f23a91dbc84f991787201aa52d0cf1cc/flit_core-3.3.0.tar.gz
-            sha256: b1404accffd6504b5f24eeca9ec5d3c877f828d16825348ba81515fa084bd5f0
+            url: https://files.pythonhosted.org/packages/2c/a9/64406cf5c1c31186e1208a290ff10a0add43882edaef5eeba49e15ba6e7f/flit_core-3.4.0.tar.gz
+            sha256: 29468fa2330969167d1f5c23eb9c0661cb6dacfcd46f361a274609a7f4197530
             x-checker-data:
               type: pypi
               name: flit-core
@@ -270,9 +270,9 @@ modules:
     buildsystem: simple
     build-options:
       env:
-        LIBRARY_PATH: "/app/lib:/usr/lib"
-        LD_LIBRARY_PATH: "/app/lib:/usr/lib"
-        LD_PRELOAD_PATH: "/app/lib:/usr/lib"
+        LIBRARY_PATH: /app/lib:/usr/lib
+        LD_LIBRARY_PATH: /app/lib:/usr/lib
+        LD_PRELOAD_PATH: /app/lib:/usr/lib
     ensure-writable:
       - /lib/python3.8/site-packages/easy-install.pth
     build-commands:
