@@ -65,8 +65,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/69/42/aa0fa900c3a5f142098e1b013995e92c2f31e1de68042cb95fa4a022bb8a/pyparsing-3.0.0.tar.gz
-        sha256: 001cad8d467e7a9248ef9fd513f5c0d39afcbcb9a43684101853bd0ab962e479
+        url: https://files.pythonhosted.org/packages/3e/f2/e451732f6263b3b95400cd8f938bc238f109b6b5431491d45915421025e4/pyparsing-3.0.2.tar.gz
+        sha256: 9366e57ad2d2faa8dd89775ef284ecae0fc4012c24717f3705613b262d712090
         x-checker-data:
           type: pypi
           name: Pyparsing
@@ -176,8 +176,8 @@ modules:
           - pip3 install . --prefix=/app --no-index --find-links .
         sources:
           - type: archive
-            url: https://files.pythonhosted.org/packages/6f/cd/3653de7b1d61f0ef95f2459ac752f23a91dbc84f991787201aa52d0cf1cc/flit_core-3.3.0.tar.gz
-            sha256: b1404accffd6504b5f24eeca9ec5d3c877f828d16825348ba81515fa084bd5f0
+            url: https://files.pythonhosted.org/packages/2c/a9/64406cf5c1c31186e1208a290ff10a0add43882edaef5eeba49e15ba6e7f/flit_core-3.4.0.tar.gz
+            sha256: 29468fa2330969167d1f5c23eb9c0661cb6dacfcd46f361a274609a7f4197530
             x-checker-data:
               type: pypi
               name: flit-core
