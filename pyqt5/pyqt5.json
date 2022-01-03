@@ -7,10 +7,9 @@
         "--enable=QtCore",
         "--enable=QtDBus",
         "--enable=QtGui",
+        "--enable=QtNetwork",
         "--enable=QtOpenGL",
-        "--enable=QtPrintSupport",
-        "--enable=QtQml",
-        "--enable=QtSvg",
+        "--enable=QtWebChannel",
         "--enable=QtWidgets",
         "--no-designer-plugin",
         "--no-docstrings",
@@ -41,13 +40,8 @@
             }
         },
         {
-            "type": "script",
-            "commands": [
-                "export _pyver=$(python -c 'import sys; print(\"%s.%s\" %sys.version_info[0:2])')",
-                "processed=$(sed 's|--prefix=/app||;s|_pyver|'${_pyver}'|g' <<< $@)",
-                "sip-build $processed",
-                "echo 'trick flatpak-builder into running make' > Makefile"
-            ],
+            "type": "file",
+            "path": "sip/sip-build-configure.in",
             "dest-filename": "configure"
         },
         {
