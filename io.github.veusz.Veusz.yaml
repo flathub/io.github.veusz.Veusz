@@ -117,8 +117,6 @@ modules:
         x-checker-data:
           type: pypi
           name: h5py
-      #- type: patch
-        #path: python-h5py-relax-dependency-versions.patch
 
   - name: ghostscript
     config-opts:
