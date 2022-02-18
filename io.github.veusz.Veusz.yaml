@@ -27,8 +27,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/50/e1/9b0c184f04b8cf5f3c941ffa56fbcbe936888bdac9aa7ba6bae405ac752b/numpy-1.22.0.zip
-        sha256: a955e4128ac36797aaffd49ab44ec74a71c11d6938df83b1285492d277db5397
+        url: https://files.pythonhosted.org/packages/e9/6c/c0a8130fe198f27bab92f1b28631e0cc2572295f6b7a31e87efe7448aa1c/numpy-1.22.2.zip
+        sha256: 076aee5a3763d41da6bef9565fdf3cb987606f567cd8b104aded2b38b7b47abf
         x-checker-data:
           type: pypi
           name: numpy
@@ -58,10 +58,6 @@ modules:
         x-checker-data:
           type: pypi
           name: packaging
-        # Relax dep
-      - type: shell
-        commands:
-          - sed -i -e 's/pyparsing>=2.0.2,<3/pyparsing>=3.0.0/g' setup.py
 
   - name: python3-Pyparsing
     buildsystem: simple
@@ -69,8 +65,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/ab/61/1a1613e3dcca483a7aa9d446cb4614e6425eb853b90db131c305bd9674cb/pyparsing-3.0.6.tar.gz
-        sha256: d9bdec0013ef1eb5a84ab39a3b3868911598afa494f5faa038647101504e2b81
+        url: https://files.pythonhosted.org/packages/d6/60/9bed18f43275b34198eb9720d4c1238c68b3755620d20df0afd89424d32b/pyparsing-3.0.7.tar.gz
+        sha256: 18ee9022775d270c55187733956460083db60b37d0d0fb357445f3094eed3eea
         x-checker-data:
           type: pypi
           name: Pyparsing
@@ -121,8 +117,8 @@ modules:
         x-checker-data:
           type: pypi
           name: h5py
-      - type: patch
-        path: python-h5py-relax-dependency-versions.patch
+      #- type: patch
+        #path: python-h5py-relax-dependency-versions.patch
 
   - name: ghostscript
     config-opts:
@@ -157,8 +153,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/82/f0/fc3f6f250bb9d5e5aaa890469fb27c4edee66cf0e2ea4f8b0b287260c6f8/astropy-5.0.tar.gz
-        sha256: 70203e151e13292586a817b4069ce1aad4643567aff38b1d191c173bc54f3927
+        url: https://files.pythonhosted.org/packages/91/a8/619de6e60fe461e3c7e908ec6fa04333b91249e7877a42485b2df981fdcb/astropy-5.0.1.tar.gz
+        sha256: 6382cde6a205aa0b16a0d5e61c0c0131ebd4f0174d6c73e2964f4bee132a9027
         x-checker-data:
           type: pypi
           name: astropy
@@ -169,8 +165,8 @@ modules:
           - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
         sources:
           - type: archive
-            url: https://files.pythonhosted.org/packages/4b/0d/ecb9595fae02467edba5023eb8a23c688d2b438a6a8d1a9e2b8649faf23d/setuptools_scm-6.3.2.tar.gz
-            sha256: a49aa8081eeb3514eb9728fa5040f2eaa962d6c6f4ec9c32f6c1fba88f88a0f2
+            url: https://files.pythonhosted.org/packages/4a/18/477d3d9eb2f88230ff2a41de9d8ffa3554b706352787d289f57f76bfba0b/setuptools_scm-6.4.2.tar.gz
+            sha256: 6833ac65c6ed9711a4d5d2266f8024cfa07c533a0e55f4c12f6eff280a5a9e30
             x-checker-data:
               type: pypi
               name: setuptools-scm
@@ -205,10 +201,6 @@ modules:
             x-checker-data:
               type: pypi
               name: extension-helpers
-            # relax dep
-          - type: shell
-            commands:
-              - sed -i -e 's/pyparsing<3,>=2.0.2/pyparsing>=3.0.0/g' setup.py
       - name: python-jinja2
         buildsystem: simple
         build-commands:
@@ -226,8 +218,8 @@ modules:
           - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
         sources:
           - type: archive
-            url: https://files.pythonhosted.org/packages/bf/10/ff66fea6d1788c458663a84d88787bae15d45daa16f6b3ef33322a51fc7e/MarkupSafe-2.0.1.tar.gz
-            sha256: 594c67807fb16238b30c44bdf74f36c02cdf22d1c8cda91ef8a0ed8dabf5620a
+            url: https://files.pythonhosted.org/packages/62/0f/52c009332fdadd484e898dc8f2acca0663c1031b3517070fd34ad9c1b64e/MarkupSafe-2.1.0.tar.gz
+            sha256: 80beaf63ddfbc64a0452b841d8036ca0611e049650e20afcb882f5d3c266d65f
             x-checker-data:
               type: pypi
               name: MarkupSafe
@@ -271,8 +263,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/02/93/03a5b0c66b17027400a0e596fec5928e6b895eaf8c46902878ceaecd7902/iminuit-2.8.4.tar.gz
-        sha256: 4b09189f3094896cfc68596adc95b7f1d92772e1de1424e5dc4dd81def56e8b0
+        url: https://files.pythonhosted.org/packages/2c/d9/a53b8644237fd08bc603600867cd3ad1d29dbb2a007d8d28b51f7759c540/iminuit-2.9.0.tar.gz
+        sha256: 656410ceffead79a52d3d727fdcd2bac78d7774239bef0efc3b7a86bae000ff3
         x-checker-data:
           type: pypi
           name: iminuit
