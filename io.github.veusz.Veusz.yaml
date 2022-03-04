@@ -96,8 +96,8 @@ modules:
       - /share/hdf5_examples
     sources:
       - type: archive
-        url: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5-1_13_0.tar.gz
-        sha256: 71ea4747e7362e27e925b67d1dea868bebedd599903f371ccd73949b6a805493
+        url: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5-1_13_1.tar.gz
+        sha256: 92552458f35c7e58128ce1bfc2831abf901cc142ea0fdd2b056311e4452db7bf
         x-checker-data:
           type: anitya
           project-id: 1303
@@ -183,8 +183,8 @@ modules:
           - pip3 install . --prefix=/app --no-index --find-links .
         sources:
           - type: archive
-            url: https://files.pythonhosted.org/packages/08/e9/0653f7783ba2ec2f954f19442878427f1d5bfccb01842d354453c2809b22/flit_core-3.6.0.tar.gz
-            sha256: 5892962ab8b8ea945835b3a288fe9dd69316f1903d5288c3f5cafdcdd04756ad
+            url: https://files.pythonhosted.org/packages/15/d1/d8798b83e953fd6f86ca9b50f93eec464a9305b0661469c8234e61095481/flit_core-3.7.1.tar.gz
+            sha256: 14955af340c43035dbfa96b5ee47407e377ee337f69e70f73064940d27d0a44f
             x-checker-data:
               type: pypi
               name: flit-core
@@ -261,8 +261,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/2c/d9/a53b8644237fd08bc603600867cd3ad1d29dbb2a007d8d28b51f7759c540/iminuit-2.9.0.tar.gz
-        sha256: 656410ceffead79a52d3d727fdcd2bac78d7774239bef0efc3b7a86bae000ff3
+        url: https://files.pythonhosted.org/packages/d6/1b/fb86feea8f9683d12872e53103945dcd834b77954a08fb1514d64e98aff7/iminuit-2.10.0.tar.gz
+        sha256: 93b33ca6d2ffd73e80b40e8a400ca3dbc70e05662f1bd390e2b6040279101485
         x-checker-data:
           type: pypi
           name: iminuit
