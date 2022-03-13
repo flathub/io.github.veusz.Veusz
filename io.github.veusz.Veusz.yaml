@@ -281,6 +281,7 @@ modules:
         LD_LIBRARY_PATH: /app/lib:/usr/lib
         LD_PRELOAD_PATH: /app/lib:/usr/lib
     ensure-writable:
+      - /lib/python3.8/site-packages/easy-install.pth
     build-commands:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
       - install -Dm644 icons/veusz_128.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png
