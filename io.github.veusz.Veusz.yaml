@@ -270,6 +270,55 @@ modules:
       - type: patch
         path: pybind11_include_dirs.patch
 
+  #- pyqt5/pyqt5.json
+
+  - shared-modules/glu/glu-9.json
+
+  - name: freeglut
+    build-options:
+      cflags: "-fcommon"
+      config-opts:
+        - "-DFREEGLUT_BUILD_STATIC_LIBS=OFF"
+        - "-DCMAKE_BUILD_TYPE=None"
+    buildsystem: cmake-ninja
+    sources:
+      - type: archive
+        url: https://downloads.sourceforge.net/project/freeglut/freeglut/3.2.1/freeglut-3.2.1.tar.gz
+        sha256: d4000e02102acaf259998c870e25214739d1f16f67f99cb35e4f46841399da68
+        x-checker-data:
+          type: anitya
+          project-id: 846
+          url-template: https://sourceforge.net/projects/freeglut/files/freeglut/$version/freeglut-$version.tar.gz
+
+  - name: python-opengl
+    buildsystem: simple
+    build-commands:
+      - pip3 install --exists-action=i --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} "PyOpenGL" --no-build-isolation
+    sources:
+      - type: file
+        url: https://files.pythonhosted.org/packages/b8/73/31c8177f3d236e9a5424f7267659c70ccea604dab0585bfcd55828397746/PyOpenGL-3.1.5.tar.gz
+        sha256: 4107ba0d0390da5766a08c242cf0cf3404c377ed293c5f6d701e457c57ba3424
+        x-checker-data:
+          type: pypi
+          name: PyOpenGL
+    cleanup:
+      - "/include"
+      - "/lib/cmake"
+      - "/lib/pkgconfig"
+
+
+  - name: PyQt-builder
+    buildsystem: simple
+    build-commands:
+      - python3 setup.py install --prefix=/app --root=/
+    sources:
+      - type: archive
+        url: https://files.pythonhosted.org/packages/8b/5f/1bd49787262ddce37b826ef49dcccf5a9970facf0ed363dee5ee233e681d/PyQt-builder-1.12.2.tar.gz
+        sha256: f62bb688d70e0afd88c413a8d994bda824e6cebd12b612902d1945c5a67edcd7
+        x-checker-data:
+          type: pypi
+          name: PyQt-builder
+
   - name: sip
     buildsystem: simple
     build-commands:
@@ -284,7 +333,7 @@ modules:
   - name: PyQt5_sip
     buildsystem: simple
     build-commands:
-      - python3 setup.py install --prefix=/app --root=/
+      - python3 setup.py install --prefix=/app --root=/ --optimize=1
     sources:
       - type: archive
         url: https://files.pythonhosted.org/packages/c0/86/6b60c6a1b1d10524ed50fc4c6a2989492512bd46292a711318a53b243774/PyQt5_sip-12.9.1.tar.gz
@@ -297,13 +346,21 @@ modules:
     buildsystem: simple
     build-commands:
       - PYVER=$(python3 -c "import sys;print(sys.version_info[1])") && QMAKEPATH=/app/lib
-        python3 configure.py --confirm-license --bindir=/app/bin --destdir=/app/lib/python3.${PYVER}/site-packages
-        --designer-plugindir=/app/lib/plugins/designer --qml-plugindir=/app/lib/plugins/PyQt5
-        --sipdir=/app/share/sip --stubsdir=/app/lib/python3.${PYVER}/site-packages/PyQt5
-        --disable=QtBluetooth --disable=QtWebKit --disable=QtWebKitWidgets --disable=QtNfc
-        --disable=QtPositioning --disable=QtNetwork --disable=QtTextToSpeech --disable=QtMultimediaWidgets
-        --disable=QtLocation --disable=QtDesigner --disable=QtSensors --disable=QtWebEngine
-        --disable=QtQuick --disable=QtQml --disable=QtTest
+        python3 configure.py --confirm-license
+        --bindir=/app/bin
+        --destdir=/app/lib/python3.${PYVER}/site-packages
+        --designer-plugindir=/app/lib/plugins/designer
+        --qml-plugindir=/app/lib/plugins/PyQt5
+        --sipdir=/app/share/sip
+        --stubsdir=/app/lib/python3.${PYVER}/site-packages/PyQt5
+        --enable=QtCore
+        --enable=QtDBus
+        --enable=QtGui
+        --enable=QtOpenGL
+        --enable=QtPrintSupport
+        --enable=QtQml
+        --enable=QtSvg
+        --enable=QtWidgets
       - make -j $FLATPAK_BUILDER_N_JOBS
       - make install
     cleanup:
@@ -327,7 +384,6 @@ modules:
         LD_LIBRARY_PATH: /app/lib:/usr/lib
         LD_PRELOAD_PATH: /app/lib:/usr/lib
     ensure-writable:
-      - /lib/python3.8/site-packages/easy-install.pth
     build-commands:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
       - install -Dm644 icons/veusz_128.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png
