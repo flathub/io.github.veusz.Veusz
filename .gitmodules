@@ -1,9 +1,6 @@
 [submodule "shared-modules"]
 	path = shared-modules
 	url = git://github.com/flathub/shared-modules.git
-[submodule "pyqt5"]
-	path = pyqt5
-	url = git@github.com:flathub/org.qutebrowser.qutebrowser.git
 [submodule "org.qutebrowser.qutebrowser"]
 	path = org.qutebrowser.qutebrowser
 	url = git@github.com:flathub/org.qutebrowser.qutebrowser.git
