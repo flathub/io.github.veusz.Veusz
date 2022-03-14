@@ -8,6 +8,8 @@
         "--enable=QtDBus",
         "--enable=QtGui",
         "--enable=QtOpenGL",
+        "--enable=QtPrintSupport",
+        "--enable=QtQml",
         "--enable=QtSvg",
         "--enable=QtWidgets",
         "--no-designer-plugin",
