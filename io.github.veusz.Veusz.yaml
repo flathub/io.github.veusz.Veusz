@@ -270,8 +270,8 @@ modules:
       - type: patch
         path: pybind11_include_dirs.patch
 
-    # Use PyQt5 from this
-  - org.qutebrowser.qutebrowser/pyqt5/pyqt5.json
+    # Use PyQt5 from org.qutebrowser.qutebrowser with QtSvg enabled
+  - pyqt5/pyqt5.json
 
   - name: Veusz
     buildsystem: simple
