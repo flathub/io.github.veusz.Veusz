@@ -191,7 +191,7 @@ modules:
       - name: python-extension-helpers
         buildsystem: simple
         build-commands:
-          - python3 -m pip install . --prefix=${FLATPAK_DEST} --root=/
+          - pip3 install . --prefix=/app --no-index --find-links .
         sources:
           - type: archive
             url: https://files.pythonhosted.org/packages/15/44/fc7754aa170b1f3b4318b009d00f1045a7f4616e2b77bcc3b3d4f5601be5/extension-helpers-1.0.0.tar.gz
