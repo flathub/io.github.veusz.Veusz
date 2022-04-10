@@ -65,8 +65,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/d6/60/9bed18f43275b34198eb9720d4c1238c68b3755620d20df0afd89424d32b/pyparsing-3.0.7.tar.gz
-        sha256: 18ee9022775d270c55187733956460083db60b37d0d0fb357445f3094eed3eea
+        url: https://files.pythonhosted.org/packages/31/df/789bd0556e65cf931a5b87b603fcf02f79ff04d5379f3063588faaf9c1e4/pyparsing-3.0.8.tar.gz
+        sha256: 7bf433498c016c4314268d95df76c81b842a4cb2b276fa3312cfb1e1d85f6954
         x-checker-data:
           type: pypi
           name: Pyparsing
@@ -151,8 +151,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/10/3d/87d1dc421e369540184de23c31f2c2e60e18750322919552aba09f05f7be/astropy-5.0.2.tar.gz
-        sha256: 449f0ba5e7292457eed37550b047444751a606e7b8a34f93b1c28d0bb63e7f40
+        url: https://files.pythonhosted.org/packages/a3/d6/b36be0232fa0761f4f3484eb5907224feebf0b359fde2218b01e782649c6/astropy-5.0.4.tar.gz
+        sha256: 001184f1a9c3f526a363883ce28efb9cbf076df3d151ca3e131509a248f0dfb9
         x-checker-data:
           type: pypi
           name: astropy
@@ -194,8 +194,8 @@ modules:
           - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
         sources:
           - type: archive
-            url: https://files.pythonhosted.org/packages/81/78/056daee475dfc41cc0b62540388703cddcae4d4f6bef10c6ce1aea76ebaf/extension-helpers-0.1.tar.gz
-            sha256: ac8a6fe91c6d98986a51a9f08ca0c7945f8fd70d95b662ced4040ae5eb973882
+            url: https://files.pythonhosted.org/packages/15/44/fc7754aa170b1f3b4318b009d00f1045a7f4616e2b77bcc3b3d4f5601be5/extension-helpers-1.0.0.tar.gz
+            sha256: ca1bfac67c79cf4a7a0c09286ce2a24eec31bf17715818d0726318dd0e5050e6
             x-checker-data:
               type: pypi
               name: extension-helpers
@@ -205,8 +205,8 @@ modules:
           - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
         sources:
           - type: archive
-            url: https://files.pythonhosted.org/packages/91/a5/429efc6246119e1e3fbf562c00187d04e83e54619249eb732bb423efa6c6/Jinja2-3.0.3.tar.gz
-            sha256: 611bb273cd68f3b993fabdc4064fc858c5b47a973cb5aa7999ec1ba405c87cd7
+            url: https://files.pythonhosted.org/packages/89/e3/b36266381ae7a1310a653bb85f4f3658c462a69634fa9b2fef76252a50ed/Jinja2-3.1.1.tar.gz
+            sha256: 640bed4bb501cbd17194b3cace1dc2126f5b619cf068a726b98192a0fde74ae9
             x-checker-data:
               type: pypi
               name: jinja2
@@ -216,8 +216,8 @@ modules:
           - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
         sources:
           - type: archive
-            url: https://files.pythonhosted.org/packages/62/0f/52c009332fdadd484e898dc8f2acca0663c1031b3517070fd34ad9c1b64e/MarkupSafe-2.1.0.tar.gz
-            sha256: 80beaf63ddfbc64a0452b841d8036ca0611e049650e20afcb882f5d3c266d65f
+            url: https://files.pythonhosted.org/packages/1d/97/2288fe498044284f39ab8950703e88abbac2abbdf65524d576157af70556/MarkupSafe-2.1.1.tar.gz
+            sha256: 7f91197cc9e48f989d12e4e6fbc46495c446636dfc81b9ccf50bb0ec74b91d4b
             x-checker-data:
               type: pypi
               name: MarkupSafe
@@ -261,8 +261,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/d6/1b/fb86feea8f9683d12872e53103945dcd834b77954a08fb1514d64e98aff7/iminuit-2.10.0.tar.gz
-        sha256: 93b33ca6d2ffd73e80b40e8a400ca3dbc70e05662f1bd390e2b6040279101485
+        url: https://files.pythonhosted.org/packages/f5/76/800d75e82805d06bfca3c29081eab195afb89c7f71d682ebb4186b821cba/iminuit-2.11.2.tar.gz
+        sha256: 8cae7917ca2d22c691e00792bfbbb812b84ac5c75120eb2ae879fb4ada41ee6c
         x-checker-data:
           type: pypi
           name: iminuit
