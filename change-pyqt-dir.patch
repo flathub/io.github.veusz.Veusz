@@ -7,7 +7,7 @@ diff -ruN a/pyqtdistutils.py b/pyqtdistutils.py
          """Compile sip file to sources."""
          sip_module = 'PyQt5.sip'
 -        pyqt5_include_dir = os.path.join(get_python_lib(plat_specific=1),
-+        flatpak_lib = '/app/lib/python3.8/site-packages'
++        flatpak_lib = '/app/lib/python3.9/site-packages'
 +        pyqt5_include_dir = os.path.join(flatpak_lib,
                                           'PyQt5', 'bindings')
          pyqt5_toml = os.path.join(pyqt5_include_dir, 'QtCore', 'QtCore.toml')
