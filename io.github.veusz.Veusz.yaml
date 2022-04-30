@@ -2,14 +2,20 @@ app-id: io.github.veusz.Veusz
 runtime: org.kde.Platform
 runtime-version: '5.15-21.08'
 sdk: org.kde.Sdk
+base: com.riverbankcomputing.PyQt.BaseApp
+base-version: 5.15-21.08
 command: veusz
 separate-locales: false
+#cleanup-commands:
+  #- /app/cleanup-BaseApp.sh
+#build-options:
+  #env:
+    #- BASEAPP_REMOVE_WEBENGINE=1
 finish-args:
   - --share=ipc
   - --socket=fallback-x11
   - --socket=wayland
   - --device=dri
-
 cleanup:
   - /include
   - /share/doc
@@ -24,7 +30,7 @@ modules:
     buildsystem: simple
     build-commands:
       - rm pyproject.toml
-      - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
+      - pip3 install --exists-action=i --no-index --no-deps --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} .
     sources:
       - type: archive
         url: https://files.pythonhosted.org/packages/64/4a/b008d1f8a7b9f5206ecf70a53f84e654707e7616a771d84c05151a4713e9/numpy-1.22.3.zip
@@ -36,7 +42,7 @@ modules:
   - name: python-pkgconfig
     buildsystem: simple
     ensure-writable:
-      - /lib/python3.8/site-packages/easy-install.pth
+      - /lib/python3.9/site-packages/easy-install.pth
     build-commands:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
@@ -46,18 +52,6 @@ modules:
         x-checker-data:
           type: pypi
           name: pkgconfig
-
-  - name: python3-packaging
-    buildsystem: simple
-    build-commands:
-      - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
-    sources:
-      - type: archive
-        url: https://files.pythonhosted.org/packages/df/9e/d1a7217f69310c1db8fdf8ab396229f55a699ce34a203691794c5d1cad0c/packaging-21.3.tar.gz
-        sha256: dd47c42927d89ab911e606518907cc2d3a1f38bbd026385970643f9c5b8ecfeb
-        x-checker-data:
-          type: pypi
-          name: packaging
 
   - name: python3-Pyparsing
     buildsystem: simple
@@ -70,20 +64,6 @@ modules:
         x-checker-data:
           type: pypi
           name: Pyparsing
-
-  - name: python3-toml
-    buildsystem: simple
-    ensure-writable:
-      - /lib/python3.8/site-packages/easy-install.pth
-    build-commands:
-      - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
-    sources:
-      - type: archive
-        url: https://files.pythonhosted.org/packages/be/ba/1f744cdc819428fc6b5084ec34d9b30660f6f9daaf70eead706e3203ec3c/toml-0.10.2.tar.gz
-        sha256: b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f
-        x-checker-data:
-          type: pypi
-          name: toml
 
   - name: hdf5
     buildsystem: cmake-ninja
@@ -107,7 +87,7 @@ modules:
   - name: python-h5py
     buildsystem: simple
     ensure-writable:
-      - /lib/python3.8/site-packages/easy-install.pth
+      - /lib/python/site-packages/easy-install.pth
     build-commands:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
@@ -157,37 +137,6 @@ modules:
           type: pypi
           name: astropy
     modules:
-      - name: python-setuptools-scm
-        buildsystem: simple
-        build-commands:
-          - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
-        sources:
-          - type: archive
-            url: https://files.pythonhosted.org/packages/4a/18/477d3d9eb2f88230ff2a41de9d8ffa3554b706352787d289f57f76bfba0b/setuptools_scm-6.4.2.tar.gz
-            sha256: 6833ac65c6ed9711a4d5d2266f8024cfa07c533a0e55f4c12f6eff280a5a9e30
-            x-checker-data:
-              type: pypi
-              name: setuptools-scm
-      - name: python-flit-core
-        buildsystem: simple
-        build-commands:
-          - pip3 install . --prefix=/app --no-index --find-links .
-        sources:
-          - type: archive
-            url: https://files.pythonhosted.org/packages/6f/cd/3653de7b1d61f0ef95f2459ac752f23a91dbc84f991787201aa52d0cf1cc/flit_core-3.3.0.tar.gz
-            sha256: b1404accffd6504b5f24eeca9ec5d3c877f828d16825348ba81515fa084bd5f0
-      - python3-tomli.json
-      - name: python-flit-core-new
-        buildsystem: simple
-        build-commands:
-          - pip3 install . --prefix=/app --no-index --find-links .
-        sources:
-          - type: archive
-            url: https://files.pythonhosted.org/packages/15/d1/d8798b83e953fd6f86ca9b50f93eec464a9305b0661469c8234e61095481/flit_core-3.7.1.tar.gz
-            sha256: 14955af340c43035dbfa96b5ee47407e377ee337f69e70f73064940d27d0a44f
-            x-checker-data:
-              type: pypi
-              name: flit-core
       - name: python-extension-helpers
         buildsystem: simple
         build-commands:
@@ -270,8 +219,17 @@ modules:
       - type: patch
         path: pybind11_include_dirs.patch
 
-    # Use PyQt5 from org.qutebrowser.qutebrowser with QtSvg enabled
-  - pyqt5/pyqt5.json
+  - name: python-parse
+    buildsystem: simple
+    build-commands:
+      - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
+    sources:
+      - type: archive
+        url: https://files.pythonhosted.org/packages/89/a1/82ce536be577ba09d4dcee45db58423a180873ad38a2d014d26ab7b7cb8a/parse-1.19.0.tar.gz
+        sha256: 9ff82852bcb65d139813e2a5197627a94966245c897796760a3a2a8eb66f020b
+        x-checker-data:
+          type: pypi
+          name: parse
 
   - name: Veusz
     buildsystem: simple
@@ -281,7 +239,7 @@ modules:
         LD_LIBRARY_PATH: /app/lib:/usr/lib
         LD_PRELOAD_PATH: /app/lib:/usr/lib
     ensure-writable:
-      - /lib/python3.8/site-packages/easy-install.pth
+      - /lib/python3.9/site-packages/easy-install.pth
     build-commands:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
       - install -Dm644 icons/veusz_128.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png
@@ -297,7 +255,7 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ^(veusz-[\d.]+)$
-      - type: patch
-        path: change-pyqt-dir.patch
-      - type: patch
-        path: fix-appdata.patch
+      #- type: patch
+        #path: change-pyqt-dir.patch
+      #- type: patch
+        #path: fix-appdata.patch
