@@ -93,8 +93,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/0a/39/62ec4c1cc96408f6cf27c1d10a26409b98eb6aa2dda7d9c48d204c09b970/h5py-3.6.0.tar.gz
-        sha256: 8752d2814a92aba4e2b2a5922d2782d0029102d99caaf3c201a566bc0b40db29
+        url: https://files.pythonhosted.org/packages/c5/40/7cf58e6230f0e76699f011c6d293dd47755997709a303a4e644823f3a753/h5py-3.7.0.tar.gz
+        sha256: 3fcf37884383c5da64846ab510190720027dca0768def34dd8dcb659dbe5cbf3
         x-checker-data:
           type: pypi
           name: h5py
@@ -132,8 +132,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/a3/d6/b36be0232fa0761f4f3484eb5907224feebf0b359fde2218b01e782649c6/astropy-5.0.4.tar.gz
-        sha256: 001184f1a9c3f526a363883ce28efb9cbf076df3d151ca3e131509a248f0dfb9
+        url: https://files.pythonhosted.org/packages/67/3d/bf8dd07f37dd9d1b14bc92985734a3eb7fb15a136dba1ebcc3e3a76d9327/astropy-5.1.tar.gz
+        sha256: 1db1b2c7eddfc773ca66fa33bd07b25d5b9c3b5eee2b934e0ca277fa5b1b7b7e
         x-checker-data:
           type: pypi
           name: astropy
@@ -242,7 +242,7 @@ modules:
     ensure-writable:
       - /lib/python3.9/site-packages/easy-install.pth
     build-commands:
-      - pip3 install --exists-action=i --no-index --find-links="file://${PWD}"
+      - pip3 install --verbose --exists-action=i --no-index --find-links=file://${PWD}
         --prefix=${FLATPAK_DEST} .
       - install -Dm644 icons/veusz_128.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png
       - install -Dm644 icons/veusz.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
