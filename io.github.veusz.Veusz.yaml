@@ -1,6 +1,6 @@
 app-id: io.github.veusz.Veusz
 runtime: org.kde.Platform
-runtime-version: '5.15-21.08'
+runtime-version: 5.15-21.08
 sdk: org.kde.Sdk
 command: veusz
 separate-locales: false
@@ -27,8 +27,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/64/4a/b008d1f8a7b9f5206ecf70a53f84e654707e7616a771d84c05151a4713e9/numpy-1.22.3.zip
-        sha256: dbc7601a3b7472d559dc7b933b18b4b66f9aa7452c120e87dfb33d02008c8a18
+        url: https://files.pythonhosted.org/packages/0a/88/f4f0c7a982efdf7bf22f283acf6009b29a9cc5835b684a49f8d3a4adb22f/numpy-1.23.3.tar.gz
+        sha256: 51bf49c0cd1d52be0a240aa66f3458afc4b95d8993d2d04f0d91fa60c10af6cd
         x-checker-data:
           type: pypi
           name: numpy
@@ -65,8 +65,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/d6/60/9bed18f43275b34198eb9720d4c1238c68b3755620d20df0afd89424d32b/pyparsing-3.0.7.tar.gz
-        sha256: 18ee9022775d270c55187733956460083db60b37d0d0fb357445f3094eed3eea
+        url: https://files.pythonhosted.org/packages/71/22/207523d16464c40a0310d2d4d8926daffa00ac1f5b1576170a32db749636/pyparsing-3.0.9.tar.gz
+        sha256: 2b020ecf7d21b687f219b71ecad3631f644a47f01403fa1d1036b0c6416d70fb
         x-checker-data:
           type: pypi
           name: Pyparsing
@@ -96,8 +96,8 @@ modules:
       - /share/hdf5_examples
     sources:
       - type: archive
-        url: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5-1_13_1.tar.gz
-        sha256: 92552458f35c7e58128ce1bfc2831abf901cc142ea0fdd2b056311e4452db7bf
+        url: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5-1_13_2.tar.gz
+        sha256: 6b97168ce262d7f9fa67355171e8e1899989046bf70ca5735341b0872760af9a
         x-checker-data:
           type: anitya
           project-id: 1303
@@ -112,8 +112,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/0a/39/62ec4c1cc96408f6cf27c1d10a26409b98eb6aa2dda7d9c48d204c09b970/h5py-3.6.0.tar.gz
-        sha256: 8752d2814a92aba4e2b2a5922d2782d0029102d99caaf3c201a566bc0b40db29
+        url: https://files.pythonhosted.org/packages/c5/40/7cf58e6230f0e76699f011c6d293dd47755997709a303a4e644823f3a753/h5py-3.7.0.tar.gz
+        sha256: 3fcf37884383c5da64846ab510190720027dca0768def34dd8dcb659dbe5cbf3
         x-checker-data:
           type: pypi
           name: h5py
@@ -151,8 +151,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/10/3d/87d1dc421e369540184de23c31f2c2e60e18750322919552aba09f05f7be/astropy-5.0.2.tar.gz
-        sha256: 449f0ba5e7292457eed37550b047444751a606e7b8a34f93b1c28d0bb63e7f40
+        url: https://files.pythonhosted.org/packages/67/3d/bf8dd07f37dd9d1b14bc92985734a3eb7fb15a136dba1ebcc3e3a76d9327/astropy-5.1.tar.gz
+        sha256: 1db1b2c7eddfc773ca66fa33bd07b25d5b9c3b5eee2b934e0ca277fa5b1b7b7e
         x-checker-data:
           type: pypi
           name: astropy
@@ -163,8 +163,8 @@ modules:
           - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
         sources:
           - type: archive
-            url: https://files.pythonhosted.org/packages/4a/18/477d3d9eb2f88230ff2a41de9d8ffa3554b706352787d289f57f76bfba0b/setuptools_scm-6.4.2.tar.gz
-            sha256: 6833ac65c6ed9711a4d5d2266f8024cfa07c533a0e55f4c12f6eff280a5a9e30
+            url: https://files.pythonhosted.org/packages/d0/43/f038b5009f93bcd77b1b8da9e6d424b739ab17aec9726f3a99eba23d53ca/setuptools_scm-7.0.5.tar.gz
+            sha256: 031e13af771d6f892b941adb6ea04545bbf91ebc5ce68c78aaf3fff6e1fb4844
             x-checker-data:
               type: pypi
               name: setuptools-scm
@@ -194,8 +194,8 @@ modules:
           - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
         sources:
           - type: archive
-            url: https://files.pythonhosted.org/packages/81/78/056daee475dfc41cc0b62540388703cddcae4d4f6bef10c6ce1aea76ebaf/extension-helpers-0.1.tar.gz
-            sha256: ac8a6fe91c6d98986a51a9f08ca0c7945f8fd70d95b662ced4040ae5eb973882
+            url: https://files.pythonhosted.org/packages/15/44/fc7754aa170b1f3b4318b009d00f1045a7f4616e2b77bcc3b3d4f5601be5/extension-helpers-1.0.0.tar.gz
+            sha256: ca1bfac67c79cf4a7a0c09286ce2a24eec31bf17715818d0726318dd0e5050e6
             x-checker-data:
               type: pypi
               name: extension-helpers
@@ -205,8 +205,8 @@ modules:
           - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
         sources:
           - type: archive
-            url: https://files.pythonhosted.org/packages/91/a5/429efc6246119e1e3fbf562c00187d04e83e54619249eb732bb423efa6c6/Jinja2-3.0.3.tar.gz
-            sha256: 611bb273cd68f3b993fabdc4064fc858c5b47a973cb5aa7999ec1ba405c87cd7
+            url: https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz
+            sha256: 31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852
             x-checker-data:
               type: pypi
               name: jinja2
@@ -216,8 +216,8 @@ modules:
           - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
         sources:
           - type: archive
-            url: https://files.pythonhosted.org/packages/62/0f/52c009332fdadd484e898dc8f2acca0663c1031b3517070fd34ad9c1b64e/MarkupSafe-2.1.0.tar.gz
-            sha256: 80beaf63ddfbc64a0452b841d8036ca0611e049650e20afcb882f5d3c266d65f
+            url: https://files.pythonhosted.org/packages/1d/97/2288fe498044284f39ab8950703e88abbac2abbdf65524d576157af70556/MarkupSafe-2.1.1.tar.gz
+            sha256: 7f91197cc9e48f989d12e4e6fbc46495c446636dfc81b9ccf50bb0ec74b91d4b
             x-checker-data:
               type: pypi
               name: MarkupSafe
@@ -249,8 +249,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/b1/5c/ccfc167485806c1936f7d3ba97db6c448d0089c5746ba105b6eb22dba60e/dbus-python-1.2.18.tar.gz
-        sha256: 92bdd1e68b45596c833307a5ff4b217ee6929a1502f5341bae28fd120acf7260
+        url: https://files.pythonhosted.org/packages/c1/d3/6be85a9c772d6ebba0cc3ab37390dd6620006dcced758667e0217fb13307/dbus-python-1.3.2.tar.gz
+        sha256: ad67819308618b5069537be237f8e68ca1c7fcc95ee4a121fe6845b1418248f8
         x-checker-data:
           type: pypi
           name: dbus-python
@@ -261,8 +261,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/d6/1b/fb86feea8f9683d12872e53103945dcd834b77954a08fb1514d64e98aff7/iminuit-2.10.0.tar.gz
-        sha256: 93b33ca6d2ffd73e80b40e8a400ca3dbc70e05662f1bd390e2b6040279101485
+        url: https://files.pythonhosted.org/packages/00/2d/368d38c3a310d0b73d0a1368cf2547c1b2ae7267f967e395028e1aa3dee9/iminuit-2.17.0.tar.gz
+        sha256: 75f4a8a2bad21fda7b6bd42df7ca04120fb24636ebf9b566d259b26f2044b1d0
         x-checker-data:
           type: pypi
           name: iminuit
@@ -292,8 +292,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/veusz/veusz
-        tag: veusz-3.4
-        commit: 6fac396be3c9f19610fa433705decfa05dfdad49
+        tag: veusz-3.4.99
+        commit: 9ec0664ec67ffa94b3b8c609834288a013560193
         x-checker-data:
           type: git
           tag-pattern: ^(veusz-[\d.]+)$
