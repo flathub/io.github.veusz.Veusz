@@ -240,7 +240,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/jeremysanders/pyemf3
-        tag: master
+        tag: v3.1
         commit: 185a621e5fc9054c27626da738f1f2fe63966b76
 
   - name: python-dbus-python
