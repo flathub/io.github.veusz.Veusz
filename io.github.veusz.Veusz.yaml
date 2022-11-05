@@ -138,10 +138,10 @@ modules:
         url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs1000/ghostscript-10.0.0.tar.gz
         sha256: a57764d70caf85e2fc0b0f59b83b92e25775631714dcdb97cc6e0cea414bb5a3
         x-checker-data:
-          type: anitya
-          project-id: 1157
-          stable-only: true
-          url-template: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases
+          type: json
+          url: https://api.github.com/repos/ArtifexSoftware/ghostpdl-downloads/releases/latest
+          version-query: ".name | sub(\"^Ghostscript/GhostPDL \"; \"\")"
+          url-query: ".assets[] | select(.name==\"ghostscript-\" + $version + \".tar.gz\") | .browser_download_url"
     cleanup:
       - /share/doc
 
