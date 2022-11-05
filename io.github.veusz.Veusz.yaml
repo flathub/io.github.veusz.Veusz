@@ -233,15 +233,15 @@ modules:
               type: pypi
               name: pyerfa
 
-  - name: python-pyemf
+  - name: python-pyemf3
     buildsystem: simple
     build-commands:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: git
-        url: https://github.com/jeremysanders/pyemf
+        url: https://github.com/jeremysanders/pyemf3
         tag: master
-        commit: 830e61008af8acf1830e5c91dc876313a771afdb
+        commit: 185a621e5fc9054c27626da738f1f2fe63966b76
 
   - name: python-dbus-python
     buildsystem: simple
