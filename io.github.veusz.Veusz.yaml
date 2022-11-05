@@ -135,8 +135,8 @@ modules:
           cppflags: -DPNG_ARM_NEON_OPT=0
     sources:
       - type: archive
-        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9540/ghostscript-9.54.0.tar.gz
-        sha256: 0646bb97f6f4d10a763f4919c54fa28b4fbdd3dff8e7de3410431c81762cade0
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs1000/ghostscript-10.0.0.tar.gz
+        sha256: a57764d70caf85e2fc0b0f59b83b92e25775631714dcdb97cc6e0cea414bb5a3
         x-checker-data:
           type: anitya
           project-id: 1157
