@@ -62,7 +62,7 @@ modules:
   - name: python3-Pyparsing
     buildsystem: simple
     build-commands:
-      - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
+      - pip3 install --prefix=${FLATPAK_DEST} --no-deps .
     sources:
       - type: archive
         url: https://files.pythonhosted.org/packages/71/22/207523d16464c40a0310d2d4d8926daffa00ac1f5b1576170a32db749636/pyparsing-3.0.9.tar.gz
