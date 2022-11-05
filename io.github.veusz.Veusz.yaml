@@ -141,7 +141,7 @@ modules:
           type: anitya
           project-id: 1157
           stable-only: true
-          url-template: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9540/ghostscript-$version.tar.gz
+          url-template: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases
     cleanup:
       - /share/doc
 
