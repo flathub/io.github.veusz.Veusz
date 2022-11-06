@@ -1,14 +1,13 @@
-Binary files a/.git/index and b/.git/index differ
-diff -ruN a/pyqtdistutils.py b/pyqtdistutils.py
---- a/pyqtdistutils.py	2021-10-18 03:46:49.759524643 +0200
-+++ b/pyqtdistutils.py	2021-10-18 18:16:42.649326382 +0200
-@@ -228,7 +228,8 @@
+--- a/pyqtdistutils.py	2022-11-01 09:54:13.740809207 +0100
++++ b/pyqtdistutils.py	2022-11-05 22:10:23.564480899 +0100
+@@ -229,8 +229,8 @@
      def _sip_compile(self, source, sip_builddir):
          """Compile sip file to sources."""
-         sip_module = 'PyQt5.sip'
--        pyqt5_include_dir = os.path.join(get_python_lib(plat_specific=1),
-+        flatpak_lib = '/app/lib/python3.9/site-packages'
-+        pyqt5_include_dir = os.path.join(flatpak_lib,
-                                          'PyQt5', 'bindings')
+ 
+-        pyqt5_include_dir = os.path.join(
+-            get_path('platlib'), 'PyQt5', 'bindings')
++        pyqt5_include_dir = '/app/lib/python3.9/site-packages/PyQt5/bindings'
++
          pyqt5_toml = os.path.join(pyqt5_include_dir, 'QtCore', 'QtCore.toml')
-         pyqt5_cfg = toml.load(pyqt5_toml)
+         with open(pyqt5_toml, 'rb') as fin:
+             pyqt5_cfg = tomli.load(fin)
