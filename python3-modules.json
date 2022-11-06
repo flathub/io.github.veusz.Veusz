@@ -1,0 +1,174 @@
+{
+    "name": "python3-modules",
+    "buildsystem": "simple",
+    "build-commands": [],
+    "modules": [
+        {
+            "name": "python3-extension-helpers",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"extension-helpers\" --no-build-isolation"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/6c/2d/32388c542f0e768abcd0903a6e069d1f8f5b2b3f0002f042ce05f96d6ee1/extension_helpers-1.0.0-py3-none-any.whl",
+                    "sha256": "7e361038cf7f6f42a821a5e55828d526890b65b35da3ac159c96d3bc18fde7b0",
+                    "x-checker-data": {
+                        "type": "pypi",
+                        "name": "extension_helpers",
+                        "packagetype": "bdist_wheel"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "python3-numpy",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"numpy\" --no-build-isolation"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/64/8e/9929b64e146d240507edaac2185cd5516f00b133be5b39250d253be25a64/numpy-1.23.4.tar.gz",
+                    "sha256": "ed2cc92af0efad20198638c69bb0fc2870a58dabfba6eb722c933b48556c686c",
+                    "x-checker-data": {
+                        "type": "pypi",
+                        "name": "numpy"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "python3-astropy",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"astropy\" --no-build-isolation"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/36/2b/61d51a2c4f25ef062ae3f74576b01638bebad5e045f747ff12643df63844/PyYAML-6.0.tar.gz",
+                    "sha256": "68fb519c14306fec9720a2a5b45bc9f0c8d1b9c72adf45c37baedfcd949c35a2",
+                    "x-checker-data": {
+                        "type": "pypi",
+                        "name": "PyYAML"
+                    }
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/ce/02/213096b189211a750d21d48d18d945efa6c8a334134a6f01b8f2d2fd4b2d/astropy-5.1.1.tar.gz",
+                    "sha256": "ba4bd696af7090fd399b464c704bf27b5633121e461785edc70432606a94bd81",
+                    "x-checker-data": {
+                        "type": "pypi",
+                        "name": "astropy"
+                    }
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/64/8e/9929b64e146d240507edaac2185cd5516f00b133be5b39250d253be25a64/numpy-1.23.4.tar.gz",
+                    "sha256": "ed2cc92af0efad20198638c69bb0fc2870a58dabfba6eb722c933b48556c686c",
+                    "x-checker-data": {
+                        "type": "pypi",
+                        "name": "numpy"
+                    }
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/05/8e/8de486cbd03baba4deef4142bd643a3e7bbe954a784dc1bb17142572d127/packaging-21.3-py3-none-any.whl",
+                    "sha256": "ef103e05f519cdc783ae24ea4e2e0f508a9c99b2d4969652eed6a2e1ea5bd522",
+                    "x-checker-data": {
+                        "type": "pypi",
+                        "name": "packaging",
+                        "packagetype": "bdist_wheel"
+                    }
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/78/fd/0148f0e54f0c6f48a141409df65d74a5f1dae2e139f23d50a43c58c16098/pyerfa-2.0.0.1.tar.gz",
+                    "sha256": "2fd4637ffe2c1e6ede7482c13f583ba7c73119d78bef90175448ce506a0ede30",
+                    "x-checker-data": {
+                        "type": "pypi",
+                        "name": "pyerfa"
+                    }
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/6c/10/a7d0fa5baea8fe7b50f448ab742f26f52b80bfca85ac2be9d35cdd9a3246/pyparsing-3.0.9-py3-none-any.whl",
+                    "sha256": "5026bae9a10eeaefb61dab2f09052b9f4307d44aee4eda64b309723d8d206bbc",
+                    "x-checker-data": {
+                        "type": "pypi",
+                        "name": "pyparsing",
+                        "packagetype": "bdist_wheel"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "python3-pkgconfig",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pkgconfig\" --no-build-isolation"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/32/af/89487c7bbf433f4079044f3dc32f9a9f887597fe04614a37a292e373e16b/pkgconfig-1.5.5-py3-none-any.whl",
+                    "sha256": "d20023bbeb42ee6d428a0fac6e0904631f545985a10cdd71a20aa58bc47a4209",
+                    "x-checker-data": {
+                        "type": "pypi",
+                        "name": "pkgconfig",
+                        "packagetype": "bdist_wheel"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "python3-h5py",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"h5py\" --no-build-isolation"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/c5/40/7cf58e6230f0e76699f011c6d293dd47755997709a303a4e644823f3a753/h5py-3.7.0.tar.gz",
+                    "sha256": "3fcf37884383c5da64846ab510190720027dca0768def34dd8dcb659dbe5cbf3",
+                    "x-checker-data": {
+                        "type": "pypi",
+                        "name": "h5py"
+                    }
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/64/8e/9929b64e146d240507edaac2185cd5516f00b133be5b39250d253be25a64/numpy-1.23.4.tar.gz",
+                    "sha256": "ed2cc92af0efad20198638c69bb0fc2870a58dabfba6eb722c933b48556c686c",
+                    "x-checker-data": {
+                        "type": "pypi",
+                        "name": "numpy"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "python3-tomli",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"tomli\" --no-build-isolation"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/97/75/10a9ebee3fd790d20926a90a2547f0bf78f371b2f13aa822c759680ca7b9/tomli-2.0.1-py3-none-any.whl",
+                    "sha256": "939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc",
+                    "x-checker-data": {
+                        "type": "pypi",
+                        "name": "tomli",
+                        "packagetype": "bdist_wheel"
+                    }
+                }
+            ]
+        }
+    ]
+}
