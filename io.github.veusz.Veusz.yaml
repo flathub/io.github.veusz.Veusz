@@ -1,9 +1,9 @@
 app-id: io.github.veusz.Veusz
 runtime: org.kde.Platform
-runtime-version: '5.15-21.08'
+runtime-version: 5.15-21.08
 sdk: org.kde.Sdk
 base: com.riverbankcomputing.PyQt.BaseApp
-base-version: '5.15-21.08'
+base-version: 5.15-21.08
 command: veusz
 separate-locales: false
 
@@ -20,10 +20,10 @@ cleanup:
   - /share/sip
   - '*.la'
   - '*.a'
-  - '/bin/f*' # clean everything except gs+veusz
+  - /bin/f*   # clean everything except gs+veusz
   - /bin/samp_hub
   - /bin/showtable
-  - '/bin/*lint'
+  - /bin/*lint
 
 cleanup-commands:
   - /app/cleanup-BaseApp.sh
@@ -42,11 +42,11 @@ modules:
       - -DHDF5_BUILD_EXAMPLES:BOOL=OFF
     cleanup:
       - /share/hdf5_examples
-      - '/bin/*'
+      - /bin/*
     sources:
       - type: archive
-        url: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5-1_13_1.tar.gz
-        sha256: 92552458f35c7e58128ce1bfc2831abf901cc142ea0fdd2b056311e4452db7bf
+        url: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5-1_13_2.tar.gz
+        sha256: 6b97168ce262d7f9fa67355171e8e1899989046bf70ca5735341b0872760af9a
         x-checker-data:
           type: anitya
           project-id: 1303
@@ -75,11 +75,12 @@ modules:
         x-checker-data:
           type: json
           url: https://api.github.com/repos/ArtifexSoftware/ghostpdl-downloads/releases/latest
-          version-query: ".name | sub(\"^Ghostscript/GhostPDL \"; \"\")"
-          url-query: ".assets[] | select(.name==\"ghostscript-\" + $version + \".tar.gz\") | .browser_download_url"
+          version-query: .name | sub("^Ghostscript/GhostPDL "; "")
+          url-query: .assets[] | select(.name=="ghostscript-" + $version + ".tar.gz")
+            | .browser_download_url
     cleanup:
       - /share/doc
-      - '/bin/???*' # everything in /bin except gs
+      - /bin/???*   # everything in /bin except gs
 
   - name: python-pyemf3
     buildsystem: simple
