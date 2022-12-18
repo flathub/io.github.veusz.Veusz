@@ -45,8 +45,8 @@ modules:
       - /bin/*
     sources:
       - type: archive
-        url: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5-1_13_1.tar.gz
-        sha256: 92552458f35c7e58128ce1bfc2831abf901cc142ea0fdd2b056311e4452db7bf
+        url: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5-1_13_3.tar.gz
+        sha256: a59d046486c9e2076a33b5b389479a2476cfe496601dffd36bd354755630d22c
         x-checker-data:
           type: anitya
           project-id: 1303
@@ -115,8 +115,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/00/2d/368d38c3a310d0b73d0a1368cf2547c1b2ae7267f967e395028e1aa3dee9/iminuit-2.17.0.tar.gz
-        sha256: 75f4a8a2bad21fda7b6bd42df7ca04120fb24636ebf9b566d259b26f2044b1d0
+        url: https://files.pythonhosted.org/packages/28/14/6bf592c1e821b4c560f3a19905cd12182562778a767cea6755002c3d26d0/iminuit-2.18.0.tar.gz
+        sha256: 7ee2c6a0bcdac581b38fae8d0f343fdee55f91f1f6a6cc9643fcfbcc6c2dc3e6
         x-checker-data:
           type: pypi
           name: iminuit
