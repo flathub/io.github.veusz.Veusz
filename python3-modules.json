@@ -31,8 +31,8 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/64/8e/9929b64e146d240507edaac2185cd5516f00b133be5b39250d253be25a64/numpy-1.23.4.tar.gz",
-                    "sha256": "ed2cc92af0efad20198638c69bb0fc2870a58dabfba6eb722c933b48556c686c",
+                    "url": "https://files.pythonhosted.org/packages/ce/b8/c170db50ec49d5845bd771bc5549fe734ee73083c5c52791915f95d8e2bc/numpy-1.24.1.tar.gz",
+                    "sha256": "2386da9a471cc00a1f47845e27d916d5ec5346ae9696e01a8a34760858fe9dd2",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "numpy"
@@ -58,8 +58,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/ce/02/213096b189211a750d21d48d18d945efa6c8a334134a6f01b8f2d2fd4b2d/astropy-5.1.1.tar.gz",
-                    "sha256": "ba4bd696af7090fd399b464c704bf27b5633121e461785edc70432606a94bd81",
+                    "url": "https://files.pythonhosted.org/packages/14/9a/6f1376020f08fbfc40d3e06590636909a7658f5ed6764d8b583c22c0278b/astropy-5.2.tar.gz",
+                    "sha256": "d335604025f6e16f7c9bf82d5ba28e5db4745a82e5823a9d17bdd9b9bd46b2a2",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "astropy"
@@ -67,8 +67,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/64/8e/9929b64e146d240507edaac2185cd5516f00b133be5b39250d253be25a64/numpy-1.23.4.tar.gz",
-                    "sha256": "ed2cc92af0efad20198638c69bb0fc2870a58dabfba6eb722c933b48556c686c",
+                    "url": "https://files.pythonhosted.org/packages/ce/b8/c170db50ec49d5845bd771bc5549fe734ee73083c5c52791915f95d8e2bc/numpy-1.24.1.tar.gz",
+                    "sha256": "2386da9a471cc00a1f47845e27d916d5ec5346ae9696e01a8a34760858fe9dd2",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "numpy"
@@ -76,8 +76,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/05/8e/8de486cbd03baba4deef4142bd643a3e7bbe954a784dc1bb17142572d127/packaging-21.3-py3-none-any.whl",
-                    "sha256": "ef103e05f519cdc783ae24ea4e2e0f508a9c99b2d4969652eed6a2e1ea5bd522",
+                    "url": "https://files.pythonhosted.org/packages/8f/7b/42582927d281d7cb035609cd3a543ffac89b74f3f4ee8e1c50914bcb57eb/packaging-22.0-py3-none-any.whl",
+                    "sha256": "957e2148ba0e1a3b282772e791ef1d8083648bc131c8ab0c1feba110ce1146c3",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "packaging",
@@ -142,8 +142,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/64/8e/9929b64e146d240507edaac2185cd5516f00b133be5b39250d253be25a64/numpy-1.23.4.tar.gz",
-                    "sha256": "ed2cc92af0efad20198638c69bb0fc2870a58dabfba6eb722c933b48556c686c",
+                    "url": "https://files.pythonhosted.org/packages/ce/b8/c170db50ec49d5845bd771bc5549fe734ee73083c5c52791915f95d8e2bc/numpy-1.24.1.tar.gz",
+                    "sha256": "2386da9a471cc00a1f47845e27d916d5ec5346ae9696e01a8a34760858fe9dd2",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "numpy"
