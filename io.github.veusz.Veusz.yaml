@@ -1,9 +1,9 @@
 app-id: io.github.veusz.Veusz
 runtime: org.kde.Platform
-runtime-version: 5.15-21.08
+runtime-version: 5.15-22.08
 sdk: org.kde.Sdk
 base: com.riverbankcomputing.PyQt.BaseApp
-base-version: 5.15-21.08
+base-version: 5.15-22.08
 command: veusz
 separate-locales: false
 
@@ -45,13 +45,13 @@ modules:
       - /bin/*
     sources:
       - type: archive
-        url: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5-1_13_3.tar.gz
-        sha256: a59d046486c9e2076a33b5b389479a2476cfe496601dffd36bd354755630d22c
-        x-checker-data:
-          type: anitya
-          project-id: 1303
-          stable-only: true
-          url-template: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5-$version.tar.gz
+        url: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5-1_13_1.tar.gz
+        sha256: 92552458f35c7e58128ce1bfc2831abf901cc142ea0fdd2b056311e4452db7bf
+        # x-checker-data:
+        #   type: anitya
+        #   project-id: 1303
+        #   stable-only: true
+        #   url-template: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5-$version.tar.gz
 
   - name: ghostscript
     config-opts:
@@ -132,7 +132,7 @@ modules:
         LD_LIBRARY_PATH: /app/lib:/usr/lib
         LD_PRELOAD_PATH: /app/lib:/usr/lib
     ensure-writable:
-      - /lib/python3.8/site-packages/easy-install.pth
+      - /lib/python3.10/site-packages/easy-install.pth
     build-commands:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
       - install -Dm644 icons/veusz_128.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png
