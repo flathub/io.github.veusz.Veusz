@@ -162,5 +162,3 @@ modules:
           tag-pattern: ^(veusz-[\d.]+)$
       - type: patch
         path: change-pyqt-dir.patch
-      # - type: patch
-      #   path: fix-appdata.patch
