@@ -155,12 +155,12 @@ modules:
     sources:
       - type: git
         url: https://github.com/veusz/veusz
-        tag: veusz-3.6
-        commit: 87fed9a13f9a988643b9365fa073adf23060a795
+        tag: veusz-3.6.2
+        commit: c690eb61739312cd85ff9e2632357f410c10bc9f
         x-checker-data:
           type: git
           tag-pattern: ^(veusz-[\d.]+)$
       - type: patch
         path: change-pyqt-dir.patch
-      - type: patch
-        path: fix-appdata.patch
+      # - type: patch
+      #   path: fix-appdata.patch
