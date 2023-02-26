@@ -1,6 +1,6 @@
-diff -ruN a/support/veusz.appdata.xml b/support/veusz.appdata.xml
---- a/support/veusz.appdata.xml	2021-10-18 03:46:49.759524643 +0200
-+++ b/support/veusz.appdata.xml	2021-10-21 23:06:20.846663282 +0200
+diff -ruN a/support/veusz.appdata.xml c/support/veusz.appdata.xml
+--- a/support/veusz.appdata.xml	2023-02-26 02:32:33.680218970 +0100
++++ c/support/veusz.appdata.xml	2023-02-26 03:04:07.377990145 +0100
 @@ -1,8 +1,8 @@
  <?xml version="1.0" encoding="UTF-8"?>
  <!-- Copyright 2014 Jeremy Sanders <jeremy@jeremysanders.net> -->
@@ -10,15 +10,24 @@ diff -ruN a/support/veusz.appdata.xml b/support/veusz.appdata.xml
 -  <launchable type="desktop-id">Veusz.desktop</launchable>
 +  <launchable type="desktop-id">io.github.veusz.Veusz.desktop</launchable>
    <metadata_license>CC0-1.0</metadata_license>
-   <project_license>GPL-2.0-only</project_license>
+   <project_license>GPL-2.0+</project_license>
    <name>Veusz</name>
-@@ -52,8 +52,8 @@
+@@ -52,14 +52,14 @@
    <url type="bugtracker">https://github.com/veusz/veusz/issues</url>
    <content_rating type="oars-1.1"/>
      <releases>
 -        <release version="3.3.1" date="2020-12-06">
+-        </release>
+-        <release version="3.4" date="2021-10-17">
++        <release version="3.6" date="2023-02-25">
+         </release>
+         <release version="3.5.3" date="2022-11-01">
+         </release>
+-        <release version="3.6" date="2023-02-25">
 +        <release version="3.4" date="2021-10-17">
-         </release>    
++        </release>
++        <release version="3.3.1" date="2020-12-06">
+         </release>
      </releases>
    <updatecontact>jeremy@jeremysanders.net</updatecontact>
 -</application>
