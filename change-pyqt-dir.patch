@@ -1,6 +1,7 @@
---- a/pyqtdistutils.py	2022-11-01 09:54:13.740809207 +0100
-+++ b/pyqtdistutils.py	2022-11-05 22:10:23.564480899 +0100
-@@ -229,8 +229,8 @@
+diff -ruN a/pyqt_setuptools.py b/pyqt_setuptools.py
+--- a/pyqt_setuptools.py	2023-02-26 02:32:33.676218960 +0100
++++ b/pyqt_setuptools.py	2023-02-26 02:33:34.996394283 +0100
+@@ -226,8 +226,8 @@
      def _sip_compile(self, source, sip_builddir):
          """Compile sip file to sources."""
  
