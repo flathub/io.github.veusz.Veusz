@@ -1,0 +1,12 @@
+diff -ruN a/support/veusz.appdata.xml b/support/veusz.appdata.xml
+--- a/support/veusz.appdata.xml	2023-02-26 16:50:51.000000000 +0100
++++ b/support/veusz.appdata.xml	2023-02-27 01:34:23.177558702 +0100
+@@ -2,7 +2,7 @@
+ <!-- Copyright 2014 Jeremy Sanders <jeremy@jeremysanders.net> -->
+ <component type="desktop-application">
+   <id>io.github.veusz.Veusz</id>
+-  <launchable type="desktop-id">Veusz.desktop</launchable>
++  <launchable type="desktop-id">io.github.veusz.Veusz.desktop</launchable>
+   <metadata_license>CC0-1.0</metadata_license>
+   <project_license>GPL-2.0+</project_license>
+   <name>Veusz</name>
