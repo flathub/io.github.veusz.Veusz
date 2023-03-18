@@ -127,8 +127,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/22/46/fe5ea079cf0d4bfec8c5d841578bbfa6a1e3550e71f529ac19a03fb9268a/iminuit-2.20.0.tar.gz
-        sha256: a73fe6e02f35e3180fc01bc5c1794edf662ff1725c3bc2a4f433567799da7504
+        url: https://files.pythonhosted.org/packages/82/dc/a005ccf61cb7c33998179d4f1054ce804c0fcd31b9509508693bb647cdf0/iminuit-2.21.1.tar.gz
+        sha256: b151059621e252b6ca310a16d044b82c329521346b9d5d0668cdb14421cb5e0f
         x-checker-data:
           type: pypi
           name: iminuit
