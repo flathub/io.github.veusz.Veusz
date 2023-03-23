@@ -68,8 +68,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/78/fd/0148f0e54f0c6f48a141409df65d74a5f1dae2e139f23d50a43c58c16098/pyerfa-2.0.0.1.tar.gz",
-                    "sha256": "2fd4637ffe2c1e6ede7482c13f583ba7c73119d78bef90175448ce506a0ede30",
+                    "url": "https://files.pythonhosted.org/packages/a7/51/b1b8770853d82726dfa5d1079de29c32f144e10eb65b3852b1cd2b39f341/pyerfa-2.0.0.3.tar.gz",
+                    "sha256": "d77fbbfa58350c194ccb99e5d93aa05d3c2b14d5aad8b662d93c6ad9fff41f39",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "pyerfa"
@@ -105,8 +105,8 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/c5/40/7cf58e6230f0e76699f011c6d293dd47755997709a303a4e644823f3a753/h5py-3.7.0.tar.gz",
-                    "sha256": "3fcf37884383c5da64846ab510190720027dca0768def34dd8dcb659dbe5cbf3",
+                    "url": "https://files.pythonhosted.org/packages/69/f4/3172bb63d3c57e24aec42bb93fcf1da4102752701ab5ad10b3ded00d0c5b/h5py-3.8.0.tar.gz",
+                    "sha256": "6fead82f0c4000cf38d53f9c030780d81bfa0220218aee13b90b7701c937d95f",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "h5py"

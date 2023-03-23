@@ -82,8 +82,8 @@ modules:
           cppflags: -DPNG_ARM_NEON_OPT=0
     sources:
       - type: archive
-        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs1000/ghostscript-10.0.0.tar.gz
-        sha256: a57764d70caf85e2fc0b0f59b83b92e25775631714dcdb97cc6e0cea414bb5a3
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10010/ghostscript-10.01.0.tar.gz
+        sha256: 7e32cf6ea3352ffec6944f227e892b72936d3b039a33f4f68da0678b72cee9cf
         x-checker-data:
           type: json
           url: https://api.github.com/repos/ArtifexSoftware/ghostpdl-downloads/releases/latest
@@ -127,8 +127,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/22/46/fe5ea079cf0d4bfec8c5d841578bbfa6a1e3550e71f529ac19a03fb9268a/iminuit-2.20.0.tar.gz
-        sha256: a73fe6e02f35e3180fc01bc5c1794edf662ff1725c3bc2a4f433567799da7504
+        url: https://files.pythonhosted.org/packages/e5/1b/6975bc5348c86b9f4e67783f5a8c24ebc2e184b755ecf16c3e00cc5a7b97/iminuit-2.21.2.tar.gz
+        sha256: 449b738f21e3d57510b3c786eefc867ba03a78e94351e0a05450f8db4c034a74
         x-checker-data:
           type: pypi
           name: iminuit
