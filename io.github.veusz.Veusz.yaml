@@ -72,6 +72,7 @@ modules:
       - --disable-dbus
       - --disable-gtk
       - --with-drivers=FILES
+      - --disable-hidden-visibility
 # https://github.com/flathub/flathub/pull/825#issuecomment-457206134
 # https://flathub.org/builds/#/builders/36/builds/687
 # https://github.com/imagemin/optipng-bin/issues/97#issue-317622868
