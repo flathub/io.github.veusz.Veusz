@@ -39,8 +39,8 @@ modules:
       - python3 setup.py install --prefix=/app --root=/
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/e4/a9/6704bb5e1d1d778d3a6ee1278a8d8134f0db160e09d52863a24edb58eab5/numpy-1.24.2.tar.gz
-        sha256: 003a9f530e880cb2cd177cba1af7220b9aa42def9c4afc2a2fc3ee6be7eb2b22
+        url: https://files.pythonhosted.org/packages/d0/b2/fe774844d1857804cc884bba67bec38f649c99d0dc1ee7cbbf1da601357c/numpy-1.25.0.tar.gz
+        sha256: f1accae9a28dc3cda46a91de86acf69de0d1b5f4edd44a9b0c3ceb8036dfff19
         x-checker-data:
           type: pypi
           name: numpy
@@ -82,8 +82,8 @@ modules:
           cppflags: -DPNG_ARM_NEON_OPT=0
     sources:
       - type: archive
-        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs1000/ghostscript-10.0.0.tar.gz
-        sha256: a57764d70caf85e2fc0b0f59b83b92e25775631714dcdb97cc6e0cea414bb5a3
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10012/ghostscript-10.01.2.tar.gz
+        sha256: a4cd61a07fec161bee35da0211a5e5cde8ff8a0aaf942fc0176715e499d21661
         x-checker-data:
           type: json
           url: https://api.github.com/repos/ArtifexSoftware/ghostpdl-downloads/releases/latest
@@ -127,8 +127,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/22/46/fe5ea079cf0d4bfec8c5d841578bbfa6a1e3550e71f529ac19a03fb9268a/iminuit-2.20.0.tar.gz
-        sha256: a73fe6e02f35e3180fc01bc5c1794edf662ff1725c3bc2a4f433567799da7504
+        url: https://files.pythonhosted.org/packages/11/9c/c472fde7ae390588946ecc1ab44b9d7cd07d05d16b2379c584d017e98df6/iminuit-2.22.0.tar.gz
+        sha256: e0ccc37bad8bc1bd3b9d3fa07d28d4c0407e25a888faa9b559be2d9afbd2d97c
         x-checker-data:
           type: pypi
           name: iminuit
