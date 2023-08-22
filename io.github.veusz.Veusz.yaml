@@ -39,8 +39,8 @@ modules:
       - python3 setup.py install --prefix=/app --root=/
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/e4/a9/6704bb5e1d1d778d3a6ee1278a8d8134f0db160e09d52863a24edb58eab5/numpy-1.24.2.tar.gz
-        sha256: 003a9f530e880cb2cd177cba1af7220b9aa42def9c4afc2a2fc3ee6be7eb2b22
+        url: https://files.pythonhosted.org/packages/a0/41/8f53eff8e969dd8576ddfb45e7ed315407d27c7518ae49418be8ed532b07/numpy-1.25.2.tar.gz
+        sha256: fd608e19c8d7c55021dffd43bfe5492fab8cc105cc8986f813f8c3c048b38760
         x-checker-data:
           type: pypi
           name: numpy
@@ -67,32 +67,24 @@ modules:
 
   - name: ghostscript
     config-opts:
-      - --enable-dynamic
       - --disable-cups
       - --disable-dbus
       - --disable-gtk
+      - --with-system-libtiff
       - --with-drivers=FILES
-# https://github.com/flathub/flathub/pull/825#issuecomment-457206134
-# https://flathub.org/builds/#/builders/36/builds/687
-# https://github.com/imagemin/optipng-bin/issues/97#issue-317622868
-# https://discourse.libsdl.org/t/ndk-sdl2-image-libpng-build-error-png-init-filter-functions-neon/24947/3
-    build-options:
-      arch:
-        aarch64:
-          cppflags: -DPNG_ARM_NEON_OPT=0
     sources:
       - type: archive
-        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs1000/ghostscript-10.0.0.tar.gz
-        sha256: a57764d70caf85e2fc0b0f59b83b92e25775631714dcdb97cc6e0cea414bb5a3
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10012/ghostscript-10.01.2.tar.xz
+        sha256: 48d079242a2ca02a2e47a76a52cdfa818b2ad769c2bab00ad0497dd13560e7e7
         x-checker-data:
-          type: json
-          url: https://api.github.com/repos/ArtifexSoftware/ghostpdl-downloads/releases/latest
-          version-query: .name | sub("^Ghostscript/GhostPDL "; "")
-          url-query: .assets[] | select(.name=="ghostscript-" + $version + ".tar.gz")
-            | .browser_download_url
+          type: anitya
+          project-id: 1157
+          url-template: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${major}0$minor$patch/ghostscript-$version.tar.xz
+      - type: shell
+        commands:
+          - rm -rf tesseract leptonica gpdl cups/libs jpeg libpng openjpeg tiff zlib
     cleanup:
       - /share/doc
-      - /bin/???*   # everything in /bin except gs
 
   - name: python-pyemf3
     buildsystem: simple
@@ -117,8 +109,6 @@ modules:
   #         type: pypi
   #         name: dbus-python
 
-  # Python modules that work without modifications:
-  # flatpak-pip-generator extension-helpers astropy pkgconfig h5py==3.7.0 tomli --checker-data
   - python3-modules.json
 
   - name: python3-iminuit
@@ -127,8 +117,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/22/46/fe5ea079cf0d4bfec8c5d841578bbfa6a1e3550e71f529ac19a03fb9268a/iminuit-2.20.0.tar.gz
-        sha256: a73fe6e02f35e3180fc01bc5c1794edf662ff1725c3bc2a4f433567799da7504
+        url: https://files.pythonhosted.org/packages/be/95/a2888ba5fdcea6736370ad2aa988d3c471daf6287bca534897c5c72351d3/iminuit-2.21.3.tar.gz
+        sha256: fb313f0cc27e221b9b221bcd779b3a668fb4c77b0f90abfd5336833ecbdac016
         x-checker-data:
           type: pypi
           name: iminuit
