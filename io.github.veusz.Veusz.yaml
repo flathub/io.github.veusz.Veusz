@@ -109,42 +109,7 @@ modules:
   #         type: pypi
   #         name: dbus-python
 
-# python3 flatpak-pip-generator hatchling -o scikit-build-core-deps && fb
-  # - scikit-build-core-deps.json
-  #
-  # - name: scikit-build-core
-  #   buildsystem: simple
-  #   build-commands:
-  #     - python3 -mpip install . --no-index --find-links=file://${PWD} --prefix=${FLATPAK_DEST}
-  #       --no-build-isolation
-  #   sources:
-  #     - type: archive
-  #       url: https://files.pythonhosted.org/packages/96/06/a8c27d8c9ab4382c2be602d8dfa33c40ea1692bac6039fad4afc86af59ec/scikit_build_core-0.4.8.tar.gz
-  #       sha256: 9fac1cac1a38ba1168190b7bd98f62aecf06cd46db7185ec8c27b27e0da4ad4b
-  #       x-checker-data:
-  #         type: pypi
-  #         name: scikit-build-core
-
-
-  # python3 flatpak-pip-generator extension-helpers astropy pkgconfig h5py==3.7.0 tomli -o python3-modules && fb
   - python3-modules.json
-
-  # - name: python3-iminuit
-  #   buildsystem: simple
-  #   build-commands:
-  #     - python3 -mpip install . --no-index --find-links=file://${PWD} --prefix=${FLATPAK_DEST}
-  #       --no-build-isolation
-  #   sources:
-  #     - type: archive
-  #       url: https://files.pythonhosted.org/packages/52/09/fa129a555e36ee059d63b841ac3542685330352261d890548283244f7f2a/iminuit-2.24.0.tar.gz
-  #       sha256: 25ab631c3c8e024b1bcc7c96f66338caac54a4a2324d55f1e3ba5617816e44fd
-  #       x-checker-data:
-  #         type: pypi
-  #         name: iminuit
-      # Fix pybind11 cannot find python3 from tinywrkb
-      # - type: patch
-      #   path: pybind11_include_dirs.patch
-
 
   - name: python3-iminuit
     buildsystem: simple
