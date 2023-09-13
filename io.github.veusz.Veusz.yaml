@@ -74,8 +74,8 @@ modules:
       - --with-drivers=FILES
     sources:
       - type: archive
-        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10012/ghostscript-10.01.2.tar.xz
-        sha256: 48d079242a2ca02a2e47a76a52cdfa818b2ad769c2bab00ad0497dd13560e7e7
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10020/ghostscript-10.02.0.tar.xz
+        sha256: fa08ce016b30d26293dc322c6353691aced94fd3667a68ede7ff5395d71fcd0b
         x-checker-data:
           type: anitya
           project-id: 1157
@@ -117,8 +117,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/be/95/a2888ba5fdcea6736370ad2aa988d3c471daf6287bca534897c5c72351d3/iminuit-2.21.3.tar.gz
-        sha256: fb313f0cc27e221b9b221bcd779b3a668fb4c77b0f90abfd5336833ecbdac016
+        url: https://files.pythonhosted.org/packages/52/09/fa129a555e36ee059d63b841ac3542685330352261d890548283244f7f2a/iminuit-2.24.0.tar.gz
+        sha256: 25ab631c3c8e024b1bcc7c96f66338caac54a4a2324d55f1e3ba5617816e44fd
         x-checker-data:
           type: pypi
           name: iminuit
