@@ -33,14 +33,48 @@ build-options:
     - BASEAPP_REMOVE_WEBENGINE=1
 
 modules:
-  - name: python3-numpy
+  - name: meson
     buildsystem: simple
     build-commands:
-      - python3 setup.py install --prefix=/app --root=/
+      - python3 setup.py build
+      - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/
+    sources:
+      - type: git
+        url: https://github.com/mesonbuild/meson.git
+        tag: 1.2.0
+        commit: abe01ae3d61f12852184746491814644a7cd9cf0
+
+  - name: OpenBLAS
+    buildsystem: cmake-ninja
+    builddir: true
+    config-opts:
+      - -DBUILD_TESTING:BOOL=ON
+      - -DDYNAMIC_ARCH:BOOL=ON
+    post-install:
+      - ctest #test
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/a0/41/8f53eff8e969dd8576ddfb45e7ed315407d27c7518ae49418be8ed532b07/numpy-1.25.2.tar.gz
-        sha256: fd608e19c8d7c55021dffd43bfe5492fab8cc105cc8986f813f8c3c048b38760
+        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.23.tar.gz
+        sha256: 5d9491d07168a5d00116cdc068a40022c3455bf9293c7cb86a65b1054d7e5114
+        x-checker-data:
+          type: anitya
+          project-id: 2540
+          url-template: https://github.com/xianyi/OpenBLAS/archive/v$version.tar.gz
+
+  - numpy_deps.json
+  # python3 flatpak-pip-generator tomli packaging pyproject_metadata exceptiongroup pytest hypothesis -o numpy_deps && python3 flatpak-pip-generator extension_helpers astropy pkgconfig h5py -o python_deps && fb
+  - name: python-numpy
+    buildsystem: simple
+    build-options:
+      ldflags: "-lgfortran"
+    build-commands:
+      - pip3 install --no-index --find-links=file://${PWD} --prefix=${FLATPAK_DEST}
+        --no-build-isolation .
+      - cd .. && python3 -c "import numpy, sys; sys.exit(numpy.test() is False)"
+    sources:
+      - type: archive
+        url: https://github.com/numpy/numpy/releases/download/v1.26.0/numpy-1.26.0.tar.gz
+        sha256: f93fc78fe8bf15afe2b8d6b6499f1c73953169fad1e9a8dd086cdff3190e7fdf
         x-checker-data:
           type: pypi
           name: numpy
@@ -57,13 +91,13 @@ modules:
       - /bin/*
     sources:
       - type: archive
-        url: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5-1_13_1.tar.gz
-        sha256: 92552458f35c7e58128ce1bfc2831abf901cc142ea0fdd2b056311e4452db7bf
-        # x-checker-data:
-        #   type: anitya
-        #   project-id: 1303
-        #   stable-only: true
-        #   url-template: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5-$version.tar.gz
+        url: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5-1_14_2.tar.gz
+        sha256: 83eaee3f9d1790bb4b29368bf1a648ece763097a4122c80a81076e8fb1e890e6
+        x-checker-data:
+          type: anitya
+          project-id: 1303
+          stable-only: true
+          url-template: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5-$version.tar.gz
 
   - name: ghostscript
     config-opts:
@@ -74,8 +108,8 @@ modules:
       - --with-drivers=FILES
     sources:
       - type: archive
-        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10012/ghostscript-10.01.2.tar.xz
-        sha256: 48d079242a2ca02a2e47a76a52cdfa818b2ad769c2bab00ad0497dd13560e7e7
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10020/ghostscript-10.02.0.tar.xz
+        sha256: fa08ce016b30d26293dc322c6353691aced94fd3667a68ede7ff5395d71fcd0b
         x-checker-data:
           type: anitya
           project-id: 1157
@@ -93,38 +127,37 @@ modules:
     sources:
       - type: git
         url: https://github.com/jeremysanders/pyemf3
-        tag: v3.1
-        commit: 185a621e5fc9054c27626da738f1f2fe63966b76
+        tag: v3.3
+        commit: b9a6824626c451c5a59135d669ab5f79d47632c9
+        x-checker-data:
+          type: git
+          tag-pattern: ^v?([\d.]+)$
 
-  # Cannot get to run currently
-  # - name: python-dbus-python
-  #   buildsystem: simple
-  #   build-commands:
-  #     - pip3 install --verbose --prefix=${FLATPAK_DEST} .
-  #   sources:
-  #     - type: archive
-  #       url: https://files.pythonhosted.org/packages/c1/d3/6be85a9c772d6ebba0cc3ab37390dd6620006dcced758667e0217fb13307/dbus-python-1.3.2.tar.gz
-  #       sha256: ad67819308618b5069537be237f8e68ca1c7fcc95ee4a121fe6845b1418248f8
-  #       x-checker-data:
-  #         type: pypi
-  #         name: dbus-python
+  - python_deps.json
 
-  - python3-modules.json
-
-  - name: python3-iminuit
-    buildsystem: simple
-    build-commands:
-      - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
+  - name: pybind11
+    buildsystem: cmake-ninja
+    builddir: true
+    config-opts:
+      - -DPYBIND11_INSTALL:BOOL=ON
+      - -DPYBIND11_TEST:BOOL=OFF
+      - -DPYTHON_INCLUDE_DIRS=/usr/include/python3.10
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/be/95/a2888ba5fdcea6736370ad2aa988d3c471daf6287bca534897c5c72351d3/iminuit-2.21.3.tar.gz
-        sha256: fb313f0cc27e221b9b221bcd779b3a668fb4c77b0f90abfd5336833ecbdac016
+        url: https://github.com/pybind/pybind11/archive/v2.11.1.tar.gz
+        sha256: d475978da0cdc2d43b73f30910786759d593a9d8ee05b1b6846d1eb16c6d2e0c
+
+  - name: python3-iminuit
+    buildsystem: cmake
+    config-opts:
+     - -DPYTHON_INCLUDE_DIRS=/usr/include/python3.10
+    sources:
+      - type: git
+        url: https://github.com/scikit-hep/iminuit
+        tag: v2.24.0
         x-checker-data:
-          type: pypi
-          name: iminuit
-      # Fix pybind11 cannot find python3 from u/tinywrkb
-      - type: patch
-        path: pybind11_include_dirs.patch
+          type: git
+          tag-pattern: ^v?([\d.]+)$
 
   - name: Veusz
     buildsystem: simple
