@@ -41,7 +41,7 @@ modules:
         commit: abe01ae3d61f12852184746491814644a7cd9cf0
 
   - name: OpenBLAS
-    buildsystem: cmake
+    buildsystem: cmake-ninja
     builddir: true
     config-opts:
       - -DBUILD_TESTING:BOOL=ON
@@ -62,7 +62,9 @@ modules:
   - name: python-numpy
     buildsystem: simple
     build-options:
-      ldflags: "-lgfortran"
+      ldflags: -lgfortran
+      cflags: -I/app/include/openblas
+      cxxflags: -I/app/include/openblas
     build-commands:
       - pip3 install --no-index --find-links=file://${PWD} --prefix=${FLATPAK_DEST}
         --no-build-isolation .
