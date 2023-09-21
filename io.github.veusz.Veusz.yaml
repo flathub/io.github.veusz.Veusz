@@ -62,7 +62,7 @@ modules:
   - name: python-numpy
     buildsystem: simple
     build-options:
-      ldflags: -lgfortran, -L/app/lib/OpenBLAs
+      ldflags: -lgfortran, -L/app/lib/OpenBLAS
       cflags: -I/app/include/openblas
       cxxflags: -I/app/include/openblas
     build-commands:
