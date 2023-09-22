@@ -34,18 +34,24 @@ modules:
     build-commands:
       - python3 setup.py build
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/
+      # - ls -l
+      # - ninja test
     sources:
       - type: git
         url: https://github.com/mesonbuild/meson.git
         tag: 1.2.0
         commit: abe01ae3d61f12852184746491814644a7cd9cf0
 
-  - name: OpenBLAS
-    buildsystem: cmake-ninja
-    builddir: true
-    config-opts:
-      - -DBUILD_TESTING:BOOL=ON
-      - -DDYNAMIC_ARCH:BOOL=ON
+  - name: openblas # dependency for scipy
+    no-autogen: true
+    make-args:
+      - DYNAMIC_ARCH=1
+      - DYNAMIC_OLDER=1
+      - FC=gfortran
+      - TARGET=GENERIC
+      - USE_OPENMP=0    # OpenMP off by default, this hack skips 'test_fork' which crashes on i386
+    make-install-args:
+      - PREFIX=/app
     post-install:
       - ctest #test
     sources:
@@ -62,15 +68,11 @@ modules:
   - name: python-numpy
     buildsystem: simple
     build-options:
-      ldflags: -lgfortran, -L/app/lib/cmake/OpenBLAS
-      cflags: -I/app/include/openblas
-      cxxflags: -I/app/include/openblas
+      ldflags: "-lgfortran"
     build-commands:
-      - env
-      - ls -l /app/include/openblas
       - pip3 install --no-index --find-links=file://${PWD} --prefix=${FLATPAK_DEST}
         --no-build-isolation .
-      - cd .. && python3 -c "import numpy, sys; sys.exit(numpy.test() is False)" #run test
+      - cd .. && python3 -c "import numpy, sys; sys.exit(numpy.test() is False)"
     sources:
       - type: archive
         url: https://github.com/numpy/numpy/releases/download/v1.26.0/numpy-1.26.0.tar.gz
@@ -78,6 +80,7 @@ modules:
         x-checker-data:
           type: pypi
           name: numpy
+
 
   - name: hdf5
     buildsystem: cmake-ninja
