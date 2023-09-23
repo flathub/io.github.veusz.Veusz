@@ -63,7 +63,7 @@ modules:
           project-id: 2540
           url-template: https://github.com/xianyi/OpenBLAS/archive/v$version.tar.gz
 
-  # python3 flatpak-pip-generator tomli packaging pyproject_metadata exceptiongroup pytest hypothesis extension_helpers astropy pkgconfig h5py -o python_deps && fb
+  # python3 flatpak-pip-generator tomli packaging pyproject_metadata exceptiongroup pytest hypothesis extension_helpers pkgconfig -o python_deps && fb
 
   - python_deps.json
 
@@ -103,6 +103,10 @@ modules:
           project-id: 1303
           stable-only: true
           url-template: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5-$version.tar.gz
+
+    # python3 flatpak-pip-generator astropy h5py --ignore-installed numpy -o astropy
+  # - astropy.json
+  - h5py.json
 
   - name: ghostscript
     config-opts:
