@@ -1,5 +1,5 @@
 app-id: io.github.veusz.Veusz
-runtime: org.kde.Platform
+runtime: org.kde.Sdk
 runtime-version: 5.15-22.08
 sdk: org.kde.Sdk
 base: com.riverbankcomputing.PyQt.BaseApp
@@ -34,15 +34,15 @@ modules:
     build-commands:
       - python3 setup.py build
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/
-      # - ls -l
-      # - ninja test
     sources:
       - type: git
         url: https://github.com/mesonbuild/meson.git
-        tag: 1.2.0
-        commit: abe01ae3d61f12852184746491814644a7cd9cf0
+        tag: 1.2.1
+        x-checker-data:
+          type: git
+          tag-pattern: ^v?([\d.]+)$
 
-  - name: openblas # dependency for scipy
+  - name: openblas
     no-autogen: true
     make-args:
       - DYNAMIC_ARCH=1
@@ -63,8 +63,10 @@ modules:
           project-id: 2540
           url-template: https://github.com/xianyi/OpenBLAS/archive/v$version.tar.gz
 
-  - numpy_deps.json
-  # python3 flatpak-pip-generator tomli packaging pyproject_metadata exceptiongroup pytest hypothesis -o numpy_deps && python3 flatpak-pip-generator extension_helpers astropy pkgconfig h5py -o python_deps && fb
+  # python3 flatpak-pip-generator tomli packaging pyproject_metadata exceptiongroup pytest hypothesis extension_helpers astropy pkgconfig h5py -o python_deps && fb
+
+  - python_deps.json
+
   - name: python-numpy
     buildsystem: simple
     build-options:
@@ -81,12 +83,10 @@ modules:
           type: pypi
           name: numpy
 
-
   - name: hdf5
     buildsystem: cmake-ninja
     builddir: true
     config-opts:
-      # - -DCMAKE_BUILD_TYPE=RelWithDebInfo
       - -DBUILD_TESTING:BOOL=ON
       - -DHDF5_BUILD_EXAMPLES:BOOL=OFF
     post-install:
@@ -137,8 +137,6 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ^v?([\d.]+)$
-
-  - python_deps.json
 
   - name: pybind11
     buildsystem: cmake-ninja
