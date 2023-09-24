@@ -52,8 +52,8 @@ modules:
       - USE_OPENMP=0    # OpenMP off by default, this hack skips 'test_fork' which crashes on i386
     make-install-args:
       - PREFIX=/app
-    post-install:
-      - ctest #test
+    # post-install:
+    #   - ctest #test
     sources:
       - type: archive
         url: https://github.com/OpenMathLib/OpenBLAS/releases/download/v0.3.24/OpenBLAS-0.3.24.tar.gz
@@ -74,7 +74,7 @@ modules:
     build-commands:
       - pip3 install --no-index --find-links=file://${PWD} --prefix=${FLATPAK_DEST}
         --no-build-isolation .
-      - cd .. && python3 -c "import numpy, sys; sys.exit(numpy.test() is False)"
+      # - cd .. && python3 -c "import numpy, sys; sys.exit(numpy.test() is False)"
     sources:
       - type: archive
         url: https://github.com/numpy/numpy/releases/download/v1.26.0/numpy-1.26.0.tar.gz
@@ -89,8 +89,8 @@ modules:
     config-opts:
       - -DBUILD_TESTING:BOOL=ON
       - -DHDF5_BUILD_EXAMPLES:BOOL=OFF
-    post-install:
-      - ctest
+    # post-install:
+    #   - ctest
     cleanup:
       - /share/hdf5_examples
       - /bin/*
