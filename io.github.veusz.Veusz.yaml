@@ -33,7 +33,7 @@ modules:
     buildsystem: simple
     build-commands:
       - python3 setup.py build
-      - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/
+      - python3 setup.py install --prefix=/app --root=/
     sources:
       - type: git
         url: https://github.com/mesonbuild/meson.git
@@ -41,7 +41,7 @@ modules:
         commit: da78b969ee3635bbea81909aa9ebdad3c77257a5
         x-checker-data:
           type: git
-          tag-pattern: ^v?([\d.]+)$
+          tag-pattern: ^([\d.]+)$
 
   - name: openblas
     no-autogen: true
