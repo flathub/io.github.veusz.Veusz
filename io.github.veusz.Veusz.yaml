@@ -38,11 +38,11 @@ modules:
       - type: git
         url: https://github.com/mesonbuild/meson.git
         tag: 1.2.1
+        commit: da78b969ee3635bbea81909aa9ebdad3c77257a5
         x-checker-data:
           type: git
           tag-pattern: ^v?([\d.]+)$
 
-        commit: da78b969ee3635bbea81909aa9ebdad3c77257a5
   - name: openblas
     no-autogen: true
     make-args:
@@ -163,11 +163,11 @@ modules:
       - type: git
         url: https://github.com/scikit-hep/iminuit
         tag: v2.24.0
+        commit: c0e3e57827fbf0e7712ae606791800b667a29620
         x-checker-data:
           type: git
           tag-pattern: ^v?([\d.]+)$
 
-        commit: c0e3e57827fbf0e7712ae606791800b667a29620
   - name: Veusz
     buildsystem: simple
     build-options:
