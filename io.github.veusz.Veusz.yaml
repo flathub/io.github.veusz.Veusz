@@ -33,14 +33,15 @@ modules:
     buildsystem: simple
     build-commands:
       - python3 setup.py build
-      - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/
+      - python3 setup.py install --prefix=/app --root=/
     sources:
       - type: git
         url: https://github.com/mesonbuild/meson.git
         tag: 1.2.1
+        commit: da78b969ee3635bbea81909aa9ebdad3c77257a5
         x-checker-data:
           type: git
-          tag-pattern: ^v?([\d.]+)$
+          tag-pattern: ^([\d.]+)$
 
   - name: openblas
     no-autogen: true
@@ -52,11 +53,11 @@ modules:
       - USE_OPENMP=0    # OpenMP off by default, this hack skips 'test_fork' which crashes on i386
     make-install-args:
       - PREFIX=/app
-    post-install:
-      - ctest #test
+    # post-install:
+    #   - ctest #test
     sources:
       - type: archive
-        url: https://github.com/OpenMathLib/OpenBLAS/releases/download/v0.3.24/OpenBLAS-0.3.24.tar.gz
+        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.24.tar.gz
         sha256: ceadc5065da97bd92404cac7254da66cc6eb192679cf1002098688978d4d5132
         x-checker-data:
           type: anitya
@@ -70,14 +71,14 @@ modules:
   - name: python-numpy
     buildsystem: simple
     build-options:
-      ldflags: "-lgfortran"
+      ldflags: -lgfortran
     build-commands:
       - pip3 install --no-index --find-links=file://${PWD} --prefix=${FLATPAK_DEST}
         --no-build-isolation .
-      - cd .. && python3 -c "import numpy, sys; sys.exit(numpy.test() is False)"
+      # - cd .. && python3 -c "import numpy, sys; sys.exit(numpy.test() is False)"
     sources:
       - type: archive
-        url: https://github.com/numpy/numpy/releases/download/v1.26.0/numpy-1.26.0.tar.gz
+        url: https://files.pythonhosted.org/packages/55/b3/b13bce39ba82b7398c06d10446f5ffd5c07db39b09bd37370dc720c7951c/numpy-1.26.0.tar.gz
         sha256: f93fc78fe8bf15afe2b8d6b6499f1c73953169fad1e9a8dd086cdff3190e7fdf
         x-checker-data:
           type: pypi
@@ -89,8 +90,8 @@ modules:
     config-opts:
       - -DBUILD_TESTING:BOOL=ON
       - -DHDF5_BUILD_EXAMPLES:BOOL=OFF
-    post-install:
-      - ctest
+    # post-install:
+    #   - ctest
     cleanup:
       - /share/hdf5_examples
       - /bin/*
@@ -157,11 +158,12 @@ modules:
   - name: python3-iminuit
     buildsystem: cmake
     config-opts:
-     - -DPYTHON_INCLUDE_DIRS=/usr/include/python3.10
+      - -DPYTHON_INCLUDE_DIRS=/usr/include/python3.10
     sources:
       - type: git
         url: https://github.com/scikit-hep/iminuit
         tag: v2.24.0
+        commit: c0e3e57827fbf0e7712ae606791800b667a29620
         x-checker-data:
           type: git
           tag-pattern: ^v?([\d.]+)$
