@@ -1,9 +1,9 @@
 app-id: io.github.veusz.Veusz
 runtime: org.kde.Sdk
-runtime-version: 5.15-22.08
+runtime-version: 5.15-23.08
 sdk: org.kde.Sdk
 base: com.riverbankcomputing.PyQt.BaseApp
-base-version: 5.15-22.08
+base-version: 5.15-23.08
 command: veusz
 separate-locales: false
 finish-args:
@@ -29,32 +29,12 @@ build-options:
     - BASEAPP_REMOVE_WEBENGINE=1
 
 modules:
-  - name: meson
-    buildsystem: simple
-    build-commands:
-      - python3 setup.py build
-      - python3 setup.py install --prefix=/app --root=/
-    sources:
-      - type: git
-        url: https://github.com/mesonbuild/meson.git
-        tag: 1.2.3
-        commit: 84e437179da05db10aa2457322c54f4ec8be61f1
-        x-checker-data:
-          type: git
-          tag-pattern: ^([\d.]+)$
-
-  - name: openblas
-    no-autogen: true
-    make-args:
-      - DYNAMIC_ARCH=1
-      - DYNAMIC_OLDER=1
-      - FC=gfortran
-      - TARGET=GENERIC
-      - USE_OPENMP=0    # OpenMP off by default, this hack skips 'test_fork' which crashes on i386
-    make-install-args:
-      - PREFIX=/app
-    # post-install:
-    #   - ctest #test
+  - name: OpenBLAS
+    buildsystem: cmake-ninja
+    builddir: true
+    config-opts:
+      - -DBUILD_TESTING:BOOL=OFF
+      - -DDYNAMIC_ARCH:BOOL=ON
     sources:
       - type: archive
         url: https://github.com/xianyi/OpenBLAS/archive/v0.3.24.tar.gz
@@ -64,7 +44,7 @@ modules:
           project-id: 2540
           url-template: https://github.com/xianyi/OpenBLAS/archive/v$version.tar.gz
 
-  # python3 flatpak-pip-generator tomli packaging pyproject_metadata exceptiongroup pytest hypothesis extension_helpers pkgconfig -o python_deps && fb
+  # python3 flatpak-pip-generator tomli packaging pyproject_metadata exceptiongroup pytest hypothesis extension_helpers pkgconfig -o python_deps && python3 flatpak-pip-generator astropy h5py --ignore-installed numpy -o h5py && fb
 
   - python_deps.json
 
@@ -75,11 +55,10 @@ modules:
     build-commands:
       - pip3 install --no-index --find-links=file://${PWD} --prefix=${FLATPAK_DEST}
         --no-build-isolation .
-      # - cd .. && python3 -c "import numpy, sys; sys.exit(numpy.test() is False)"
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/78/23/f78fd8311e0f710fe1d065d50b92ce0057fe877b8ed7fd41b28ad6865bfc/numpy-1.26.1.tar.gz
-        sha256: c8c6c72d4a9f831f328efb1312642a1cafafaa88981d9ab76368d50d07d93cbe
+        url: https://files.pythonhosted.org/packages/dd/2b/205ddff2314d4eea852e31d53b8e55eb3f32b292efc3dd86bd827ab9019d/numpy-1.26.2.tar.gz
+        sha256: f65738447676ab5777f11e6bbbdb8ce11b785e105f690bc45966574816b6d3ea
         x-checker-data:
           type: pypi
           name: numpy
@@ -90,8 +69,6 @@ modules:
     config-opts:
       - -DBUILD_TESTING:BOOL=ON
       - -DHDF5_BUILD_EXAMPLES:BOOL=OFF
-    # post-install:
-    #   - ctest
     cleanup:
       - /share/hdf5_examples
       - /bin/*
@@ -105,9 +82,20 @@ modules:
           stable-only: true
           url-template: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5-$version.tar.gz
 
-    # python3 flatpak-pip-generator astropy h5py --ignore-installed numpy -o astropy
-  # - astropy.json
-  - h5py.json
+  - name: python-h5py
+    buildsystem: simple
+    build-commands:
+      - python3 -mpip install . --no-index --find-links=file://${PWD} --prefix=${FLATPAK_DEST}
+        --no-build-isolation
+    sources:
+      - type: archive
+        url: https://github.com/h5py/h5py/archive/refs/tags/3.9.0.tar.gz
+        sha256: ac46f5caae570c9312edea6f65ad4e894e8da44a868b7f263e15265bc3de7a16
+        x-checker-data:
+          type: anitya
+          project-id: 6409
+          stable-only: true
+          url-template: https://github.com/h5py/h5py/archive/refs/tags/${version}.tar.gz
 
   - name: ghostscript
     config-opts:
@@ -149,7 +137,7 @@ modules:
     config-opts:
       - -DPYBIND11_INSTALL:BOOL=ON
       - -DPYBIND11_TEST:BOOL=OFF
-      - -DPYTHON_INCLUDE_DIRS=/usr/include/python3.10
+      - -DPYTHON_INCLUDE_DIRS=/usr/include/python3.11
     sources:
       - type: archive
         url: https://github.com/pybind/pybind11/archive/v2.11.1.tar.gz
@@ -158,7 +146,7 @@ modules:
   - name: python3-iminuit
     buildsystem: cmake
     config-opts:
-      - -DPYTHON_INCLUDE_DIRS=/usr/include/python3.10
+      - -DPYTHON_INCLUDE_DIRS=/usr/include/python3.11
     sources:
       - type: git
         url: https://github.com/scikit-hep/iminuit
@@ -176,7 +164,7 @@ modules:
         LD_LIBRARY_PATH: /app/lib:/usr/lib
         LD_PRELOAD_PATH: /app/lib:/usr/lib
     ensure-writable:
-      - /lib/python3.10/site-packages/easy-install.pth
+      - /lib/python3.11/site-packages/easy-install.pth
     build-commands:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
       - install -Dm644 icons/veusz_128.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png
