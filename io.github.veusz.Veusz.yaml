@@ -139,9 +139,13 @@ modules:
       - -DPYBIND11_TEST:BOOL=OFF
       - -DPYTHON_INCLUDE_DIRS=/usr/include/python3.11
     sources:
-      - type: archive
-        url: https://github.com/pybind/pybind11/archive/v2.11.1.tar.gz
-        sha256: d475978da0cdc2d43b73f30910786759d593a9d8ee05b1b6846d1eb16c6d2e0c
+      - type: git
+        url: https://github.com/pybind/pybind11
+        tag: v2.12.0
+        commit: 3e9dfa2866941655c56877882565e7577de6fc7b
+        x-checker-data:
+          type: git
+          tag-pattern: ^v?([\d.]+)$
 
   - name: python3-iminuit
     buildsystem: cmake
@@ -149,8 +153,8 @@ modules:
       - -DPYTHON_INCLUDE_DIRS=/usr/include/python3.11
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/78/f1/416e559122a3872878853429a87143b4b4f5d33e23c1317be8a270e875aa/iminuit-2.25.2.tar.gz
-        sha256: 3bf8a1b96865a60cedf29135f4feae09fa7c66237d29f68ded64e97a823a9b3e
+        url: https://files.pythonhosted.org/packages/e9/f1/98215dede1a87391dfb2ba13e99bd55498818b4fd6f8b546e0766b2be21a/iminuit-2.26.0.tar.gz
+        sha256: a51233fbf1c2e008aa584f9eea65b6c30ed56624e4dea5d4e53370ccd84c9b4e
         x-checker-data:
           type: pypi
           name: iminuit
