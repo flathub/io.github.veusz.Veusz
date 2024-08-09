@@ -37,8 +37,8 @@ modules:
       - -DDYNAMIC_ARCH:BOOL=ON
     sources:
       - type: archive
-        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.27.tar.gz
-        sha256: aa2d68b1564fe2b13bc292672608e9cdeeeb6dc34995512e65c3b10f4599e897
+        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.28.tar.gz
+        sha256: f1003466ad074e9b0c8d421a204121100b0751c96fc6fcf3d1456bd12f8a00a1
         x-checker-data:
           type: anitya
           project-id: 2540
@@ -57,8 +57,8 @@ modules:
         --no-build-isolation .
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/65/6e/09db70a523a96d25e115e71cc56a6f9031e7b8cd166c1ac8438307c14058/numpy-1.26.4.tar.gz
-        sha256: 2a02aba9ed12e4ac4eb3ea9421c420301a0c6460d9830d74a9df87efa4912010
+        url: https://files.pythonhosted.org/packages/1c/8a/0db635b225d2aa2984e405dc14bd2b0c324a0c312ea1bc9d283f2b83b038/numpy-2.0.1.tar.gz
+        sha256: 485b87235796410c3519a699cfe1faab097e509e90ebb05dcd098db2ae87e7b3
         x-checker-data:
           type: pypi
           name: numpy
@@ -153,8 +153,8 @@ modules:
       - -DPYTHON_INCLUDE_DIRS=/usr/include/python3.11
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/e9/f1/98215dede1a87391dfb2ba13e99bd55498818b4fd6f8b546e0766b2be21a/iminuit-2.26.0.tar.gz
-        sha256: a51233fbf1c2e008aa584f9eea65b6c30ed56624e4dea5d4e53370ccd84c9b4e
+        url: https://files.pythonhosted.org/packages/d8/c3/9385361c5f115928c1490422d9d824581141f8f444096a6ed00009add74e/iminuit-2.28.0.tar.gz
+        sha256: 6646ae0b66a4760e02cd73711d460a6cf2375382b78ce8344141751595596aad
         x-checker-data:
           type: pypi
           name: iminuit
