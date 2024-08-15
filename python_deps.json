@@ -83,8 +83,8 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/01/90/79fe92dd413a9cab314ef5c591b5aa9b9ba787ae4cadab75055b0ae00b33/exceptiongroup-1.2.1-py3-none-any.whl",
-                    "sha256": "5258b9ed329c5bbdd31a309f53cbfb0b155341807f6ff7606a1e801a891b29ad"
+                    "url": "https://files.pythonhosted.org/packages/02/cc/b7e31358aac6ed1ef2bb790a9746ac2c69bcb3c8588b41616914eb106eaf/exceptiongroup-1.2.2-py3-none-any.whl",
+                    "sha256": "3111b9d131c238bec2f8f516e123e14ba243563fb135d3fe885990585aa7795b"
                 }
             ]
         },
@@ -112,8 +112,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/4e/e7/81ebdd666d3bff6670d27349b5053605d83d55548e6bd5711f3b0ae7dd23/pytest-8.2.2-py3-none-any.whl",
-                    "sha256": "c434598117762e2bd304e526244f67bf66bbd7b5d6cf22138be51ff661980343"
+                    "url": "https://files.pythonhosted.org/packages/0f/f9/cf155cf32ca7d6fa3601bc4c5dd19086af4b320b706919d48a4c79081cf9/pytest-8.3.2-py3-none-any.whl",
+                    "sha256": "4ba08f9ae7dcf84ded419494d229b48d0903ea6407b030eaec46df5e6a73bba5"
                 }
             ]
         },
@@ -126,13 +126,13 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/e0/44/827b2a91a5816512fcaf3cc4ebc465ccd5d598c45cefa6703fcf4a79018f/attrs-23.2.0-py3-none-any.whl",
-                    "sha256": "99b87a485a5820b23b879f04c2305b44b951b502fd64be915879d77a7e8fc6f1"
+                    "url": "https://files.pythonhosted.org/packages/6a/21/5b6702a7f963e95456c0de2d495f67bf5fd62840ac655dc451586d23d39a/attrs-24.2.0-py3-none-any.whl",
+                    "sha256": "81921eb96de3191c8258c199618104dd27ac608d9366f5e35d011eae1867ede2"
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/bd/8d/0fa29f35e9693777b75bd3811a969fa6815ab93bdd7f34ea755e84a4a1b9/hypothesis-6.103.2-py3-none-any.whl",
-                    "sha256": "629b7cdeca8c225933739f99879caba21949000d2c919c8b4585e01048b3bc73"
+                    "url": "https://files.pythonhosted.org/packages/35/93/79c7f242088d5b8dd4217b0bc6367b53b7dc1efb98c25403349f948efe8a/hypothesis-6.111.0-py3-none-any.whl",
+                    "sha256": "7a51f678da3719a04a3ef61cd241384dd93b49f35d7cce22833745c66ac1d507"
                 },
                 {
                     "type": "file",
