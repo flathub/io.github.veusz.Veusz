@@ -153,8 +153,8 @@ modules:
       - -DPYTHON_INCLUDE_DIRS=/usr/include/python3.11
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/0b/88/e77fc2370468be58303c131fa19cbe70ff478df13d762eef9502874da6fa/iminuit-2.29.1.tar.gz
-        sha256: 474d10eb2f924b9320f6f7093e4c149d0a38c124d0419c12a07a3eca942de025
+        url: https://files.pythonhosted.org/packages/8b/f3/54358d1102f52d129b5292723466b29f33ff774e43561b233971ed42b61c/iminuit-2.30.0.tar.gz
+        sha256: 8de0b82bb6b3381165b38e95761a0270189a0083cdb92e154df1657ec6519a40
         x-checker-data:
           type: pypi
           name: iminuit
