@@ -37,8 +37,8 @@ modules:
       - -DDYNAMIC_ARCH:BOOL=ON
     sources:
       - type: archive
-        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.28.tar.gz
-        sha256: f1003466ad074e9b0c8d421a204121100b0751c96fc6fcf3d1456bd12f8a00a1
+        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.29.tar.gz
+        sha256: 38240eee1b29e2bde47ebb5d61160207dc68668a54cac62c076bb5032013b1eb
         x-checker-data:
           type: anitya
           project-id: 2540
@@ -74,8 +74,8 @@ modules:
       - /bin/*
     sources:
       - type: archive
-        url: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5-1_14_3.tar.gz
-        sha256: df5ee33c74d5efb59738075ef96f4201588e1f1eeb233f047ac7fd1072dee1f6
+        url: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5-1.14.5.tar.gz
+        sha256: 8a639f829d2b1e39a206ff4cbaeb9047d88541a7ca5a8b65b7af52b667846d0d
         x-checker-data:
           type: anitya
           project-id: 1303
@@ -153,8 +153,8 @@ modules:
       - -DPYTHON_INCLUDE_DIRS=/usr/include/python3.11
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/8b/f3/54358d1102f52d129b5292723466b29f33ff774e43561b233971ed42b61c/iminuit-2.30.0.tar.gz
-        sha256: 8de0b82bb6b3381165b38e95761a0270189a0083cdb92e154df1657ec6519a40
+        url: https://files.pythonhosted.org/packages/9c/2f/885810178ce831150059e658394afb8d5256ee13713308221dd48c003682/iminuit-2.30.1.tar.gz
+        sha256: 2815bfdeb8e7f78185f316b75e2d4b19d0f6993bdc5ff03352ed37b70a796360
         x-checker-data:
           type: pypi
           name: iminuit
