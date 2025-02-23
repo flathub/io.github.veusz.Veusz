@@ -89,8 +89,8 @@ modules:
         --no-build-isolation
     sources:
       - type: archive
-        url: https://github.com/h5py/h5py/archive/refs/tags/3.12.1.tar.gz
-        sha256: ee8d25e6cc6275779a2727258bcce9f2296a58b6e5ccf4cdc467a3c3a97b56b2
+        url: https://github.com/h5py/h5py/archive/refs/tags/3.13.0.tar.gz
+        sha256: d16d0f02e24aed3ba8eb59e406aa44a24f6295c4ad7d85ad4ec6bc0ea176a24e
         x-checker-data:
           type: anitya
           project-id: 6409
