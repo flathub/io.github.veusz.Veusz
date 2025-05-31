@@ -106,8 +106,8 @@ modules:
       - --with-drivers=FILES
     sources:
       - type: archive
-        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10040/ghostscript-10.04.0.tar.xz
-        sha256: 527eef0b6cd04ecf1c8d7a11796c69a52d34ffe36afca86a400729a2fc01c887
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10051/ghostscript-10.05.1.tar.xz
+        sha256: 22f2bdca15c28830c9715cddc5c296ea66898bfdab0b604a4e0bcfeb03af6cad
         x-checker-data:
           type: anitya
           project-id: 1157
@@ -153,8 +153,8 @@ modules:
       - -DPYTHON_INCLUDE_DIRS=/usr/include/python3.11
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/9c/2f/885810178ce831150059e658394afb8d5256ee13713308221dd48c003682/iminuit-2.30.1.tar.gz
-        sha256: 2815bfdeb8e7f78185f316b75e2d4b19d0f6993bdc5ff03352ed37b70a796360
+        url: https://files.pythonhosted.org/packages/11/c9/5e9ada0b0a9d1665b1f39d1bc76c91627f0eb22e2b5c879b175f294c4d26/iminuit-2.31.1.tar.gz
+        sha256: d5e004f1ffd83d2a076409fbf4a79691e7a17c9d73950bb63465af32e104de18
         x-checker-data:
           type: pypi
           name: iminuit
@@ -178,8 +178,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/veusz/veusz
-        tag: veusz-3.6.2
-        commit: c690eb61739312cd85ff9e2632357f410c10bc9f
+        tag: veusz-4.0
+        commit: 125653d4ec8640b1caa2406a11a8575e7fd72f79
         x-checker-data:
           type: git
           tag-pattern: ^(veusz-[\d.]+)$
