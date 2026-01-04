@@ -37,8 +37,8 @@ modules:
       - -DDYNAMIC_ARCH:BOOL=ON
     sources:
       - type: archive
-        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.29.tar.gz
-        sha256: 38240eee1b29e2bde47ebb5d61160207dc68668a54cac62c076bb5032013b1eb
+        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.30.tar.gz
+        sha256: 27342cff518646afb4c2b976d809102e368957974c250a25ccc965e53063c95d
         x-checker-data:
           type: anitya
           project-id: 2540
@@ -89,8 +89,8 @@ modules:
         --no-build-isolation
     sources:
       - type: archive
-        url: https://github.com/h5py/h5py/archive/refs/tags/3.13.0.tar.gz
-        sha256: d16d0f02e24aed3ba8eb59e406aa44a24f6295c4ad7d85ad4ec6bc0ea176a24e
+        url: https://github.com/h5py/h5py/archive/refs/tags/3.15.1.tar.gz
+        sha256: 55a03d8fc1db535b243cccda3e6237844da25a17a2df3bc0ea9db6fbbbd7bf2b
         x-checker-data:
           type: anitya
           project-id: 6409
@@ -106,8 +106,8 @@ modules:
       - --with-drivers=FILES
     sources:
       - type: archive
-        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10040/ghostscript-10.04.0.tar.xz
-        sha256: 527eef0b6cd04ecf1c8d7a11796c69a52d34ffe36afca86a400729a2fc01c887
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10060/ghostscript-10.06.0.tar.xz
+        sha256: 64352648c2c081c8a9fb1a12dc1965e01ead7c57f58b72d1b54f6ef1cef3c561
         x-checker-data:
           type: anitya
           project-id: 1157
@@ -141,8 +141,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/pybind/pybind11
-        tag: v2.13.6
-        commit: a2e59f0e7065404b44dfe92a28aca47ba1378dc4
+        tag: v3.0.1
+        commit: f5fbe867d2d26e4a0a9177a51f6e568868ad3dc8
         x-checker-data:
           type: git
           tag-pattern: ^v?([\d.]+)$
@@ -153,8 +153,8 @@ modules:
       - -DPYTHON_INCLUDE_DIRS=/usr/include/python3.11
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/9c/2f/885810178ce831150059e658394afb8d5256ee13713308221dd48c003682/iminuit-2.30.1.tar.gz
-        sha256: 2815bfdeb8e7f78185f316b75e2d4b19d0f6993bdc5ff03352ed37b70a796360
+        url: https://files.pythonhosted.org/packages/e8/0d/48a09d00769634930b1bdbf1ea057a2747a81d07825cd6940784d8b6599f/iminuit-2.32.0.tar.gz
+        sha256: a32b34d18665959be75ad6bdb1dd80459bb94466c62b455631c00568accdf7d2
         x-checker-data:
           type: pypi
           name: iminuit
@@ -178,8 +178,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/veusz/veusz
-        tag: veusz-3.6.2
-        commit: c690eb61739312cd85ff9e2632357f410c10bc9f
+        tag: veusz-4.2
+        commit: fc636ff2976e7c95545170b657c08719766dfa2c
         x-checker-data:
           type: git
           tag-pattern: ^(veusz-[\d.]+)$
