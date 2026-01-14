@@ -36,14 +36,14 @@ modules:
       - -DCMAKE_BUILD_TYPE=Release
     sources:
       - type: archive
-        url: https://github.com/OpenMathLib/OpenBLAS/archive/refs/tags/v0.3.30.tar.gz
-        sha256: 27342cff518646afb4c2b976d809102e368957974c250a25ccc965e53063c95d
+        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.29.tar.gz
+        sha256: 38240eee1b29e2bde47ebb5d61160207dc68668a54cac62c076bb5032013b1eb
         x-checker-data:
           type: anitya
           project-id: 2540
-          url-template: https://github.com/OpenMathLib/OpenBLAS/archive/refs/tags/v$version.tar.gz
+          url-template: https://github.com/xianyi/OpenBLAS/archive/v$version.tar.gz
 
-  # python3 flatpak-pip-generator meson-python tomli packaging pyproject_metadata exceptiongroup pygments pytest hypothesis extension_helpers pkgconfig -o python_deps && python3 flatpak-pip-generator astropy h5py --ignore-installed numpy -o h5py && fb
+  # python3 flatpak-pip-generator meson-python tomli packaging pyproject_metadata exceptiongroup pygments pytest hypothesis extension_helpers pkgconfig astropy -o python_deps && fb
 
   - python_deps.json
 
@@ -177,7 +177,5 @@ modules:
           tag-pattern: ^(veusz-[\d.]+)$
       - type: patch
         path: fix-qconfig-path.patch
-      # - type: patch
-      #   path: change-pyqt-dir.patch
       - type: patch
         path: fix-appdata.patch
