@@ -1,0 +1,46 @@
+diff -ruN a/pyqt_setuptools.py b/pyqt_setuptools.py
+--- a/pyqt_setuptools.py	2025-10-27 06:48:28.000000000 +0700
++++ b/pyqt_setuptools.py	2026-01-13 17:41:49.515768277 +0700
+@@ -108,9 +108,39 @@
+             return os.environ['QT_LIBINFIX']
+ 
+         # use this to find location of qconfig file
+-        archdir = read_command_output(
+-            [self._get_qmake(build_cmd), '-query', 'QT_INSTALL_ARCHDATA'])
+-        qconfig = os.path.join(archdir, 'mkspecs', 'qconfig.pri')
++        qmake = self._get_qmake(build_cmd)
++
++        # try the usual location first
++        archdir = read_command_output([qmake, '-query', 'QT_INSTALL_ARCHDATA']).strip()
++        candidates = [
++            os.path.join(archdir, 'mkspecs', 'qconfig.pri'),
++        ]
++
++        # common alternative roots
++        for key in ('QT_INSTALL_DATA', 'QT_HOST_DATA', 'QT_INSTALL_PREFIX'):
++            try:
++                base = read_command_output([qmake, '-query', key]).strip()
++            except Exception:
++                continue
++            candidates.append(os.path.join(base, 'mkspecs', 'qconfig.pri'))
++
++        # extra common Qt6 layouts (harmless if absent)
++        candidates += [
++            '/usr/mkspecs/qconfig.pri',
++            '/usr/lib/qt6/mkspecs/qconfig.pri',
++            '/usr/share/qt6/mkspecs/qconfig.pri',
++        ]
++
++        qconfig = None
++        for path in candidates:
++            if os.path.exists(path):
++                qconfig = path
++                break
++
++        if qconfig is None:
++            raise FileNotFoundError(
++                "Could not find qconfig.pri. Tried:\n  " + "\n  ".join(candidates)
++            )
+ 
+         libinfix = ''
+         for line in open(qconfig):
