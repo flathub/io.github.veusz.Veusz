@@ -1,0 +1,39 @@
+{
+    "name": "python3-astropy",
+    "buildsystem": "simple",
+    "build-commands": [
+        "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"astropy\" --no-build-isolation"
+    ],
+    "sources": [
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/7b/92/2dce2d48347efc3346d08ca7995b152d242ebd170c571f7c9346468d8427/astropy-7.2.0.tar.gz",
+            "sha256": "ae48bc26b1feaeb603cd94bd1fa1aa39137a115fe931b7f13787ab420e8c3070"
+        },
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/9d/1d/9c0f809bf0706eed0f4cdb6d515d0a9acab44d903acf6c45f31a5cfcacc2/astropy_iers_data-0.2026.1.12.0.42.13-py3-none-any.whl",
+            "sha256": "1ed3e665ad8938cd4410ee205894ff6ca4d1d5bd6b0357a94cc39e55150398ba"
+        },
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/24/62/ae72ff66c0f1fd959925b4c11f8c2dea61f47f6acaea75a08512cdfe3fed/numpy-2.4.1.tar.gz",
+            "sha256": "a1ceafc5042451a858231588a104093474c6a5c57dcc724841f5c888d237d690"
+        },
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/20/12/38679034af332785aac8774540895e234f4d07f7545804097de4b666afd8/packaging-25.0-py3-none-any.whl",
+            "sha256": "29572ef2b1f17581046b3a2227d5c611fb25ec70ca1ba8554b24b0e69331a484"
+        },
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/71/39/63cc8291b0cf324ae710df41527faf7d331bce573899199d926b3e492260/pyerfa-2.0.1.5.tar.gz",
+            "sha256": "17d6b24fe4846c65d5e7d8c362dcb08199dc63b30a236aedd73875cc83e1f6c0"
+        },
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz",
+            "sha256": "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
+        }
+    ]
+}

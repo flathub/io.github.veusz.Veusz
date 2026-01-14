@@ -43,7 +43,7 @@ modules:
           project-id: 2540
           url-template: https://github.com/xianyi/OpenBLAS/archive/v$version.tar.gz
 
-  # python3 flatpak-pip-generator meson-python tomli packaging pyproject_metadata exceptiongroup pygments pytest hypothesis extension_helpers pkgconfig astropy -o python_deps && fb
+  # python3 flatpak-pip-generator meson-python tomli packaging pyproject_metadata exceptiongroup pygments pytest hypothesis extension_helpers pkgconfig -o python_deps && python3 flatpak-pip-generator astropy
 
   - python_deps.json
 
@@ -61,6 +61,8 @@ modules:
         x-checker-data:
           type: pypi
           name: numpy
+
+  - python3-astropy.json
 
   - name: hdf5
     buildsystem: cmake-ninja
@@ -120,7 +122,8 @@ modules:
   - name: python-pyemf3
     buildsystem: simple
     build-commands:
-      - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
+      - python3 -mpip install . --no-index --find-links=file://${PWD} --prefix=${FLATPAK_DEST}
+        --no-build-isolation
     sources:
       - type: git
         url: https://github.com/jeremysanders/pyemf3
@@ -148,8 +151,6 @@ modules:
 
   - name: python3-iminuit
     buildsystem: cmake
-    config-opts:
-      - -DPYTHON_INCLUDE_DIRS=/usr/include/python3.13
     sources:
       - type: archive
         url: https://files.pythonhosted.org/packages/e8/0d/48a09d00769634930b1bdbf1ea057a2747a81d07825cd6940784d8b6599f/iminuit-2.32.0.tar.gz
