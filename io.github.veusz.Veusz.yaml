@@ -34,6 +34,7 @@ modules:
     builddir: true
     config-opts:
       - -DCMAKE_BUILD_TYPE=Release
+      - -DDYNAMIC_ARCH=TRUE #https://github.com/flathub/org.octave.Octave/issues/131
     sources:
       - type: archive
         url: https://github.com/xianyi/OpenBLAS/archive/v0.3.31.tar.gz
