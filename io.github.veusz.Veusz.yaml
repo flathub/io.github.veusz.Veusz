@@ -58,8 +58,8 @@ modules:
         --no-build-isolation .
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/24/62/ae72ff66c0f1fd959925b4c11f8c2dea61f47f6acaea75a08512cdfe3fed/numpy-2.4.1.tar.gz
-        sha256: a1ceafc5042451a858231588a104093474c6a5c57dcc724841f5c888d237d690
+        url: https://files.pythonhosted.org/packages/10/8b/c265f4823726ab832de836cdd184d0986dcf94480f81e8739692a7ac7af2/numpy-2.4.3.tar.gz
+        sha256: 483a201202b73495f00dbc83796c6ae63137a9bdade074f7648b3e32613412dd
         x-checker-data:
           type: pypi
           name: numpy
@@ -92,8 +92,8 @@ modules:
         --no-build-isolation
     sources:
       - type: archive
-        url: https://github.com/h5py/h5py/archive/refs/tags/3.15.1.tar.gz
-        sha256: 55a03d8fc1db535b243cccda3e6237844da25a17a2df3bc0ea9db6fbbbd7bf2b
+        url: https://github.com/h5py/h5py/archive/refs/tags/3.16.0.tar.gz
+        sha256: 9c3aa5e1fc0c33ae8501a17987af2f986c8ba3ade25da66c78738a5abefea133
         x-checker-data:
           type: anitya
           project-id: 6409
@@ -109,8 +109,8 @@ modules:
       - --with-drivers=FILES
     sources:
       - type: archive
-        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10060/ghostscript-10.06.0.tar.xz
-        sha256: 64352648c2c081c8a9fb1a12dc1965e01ead7c57f58b72d1b54f6ef1cef3c561
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10070/ghostscript-10.07.0.tar.xz
+        sha256: ddace4e1721f967a55039baff564840225e0baa1d4f5432247ca1ccd1473b7c1
         x-checker-data:
           type: anitya
           project-id: 1157
@@ -145,8 +145,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/pybind/pybind11
-        tag: v3.0.1
-        commit: f5fbe867d2d26e4a0a9177a51f6e568868ad3dc8
+        tag: v3.0.2
+        commit: 45fab4087eaaff234227a10cf7845e8b07f28a98
         x-checker-data:
           type: git
           tag-pattern: ^v?([\d.]+)$
