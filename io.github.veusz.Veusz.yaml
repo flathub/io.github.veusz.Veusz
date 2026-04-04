@@ -58,8 +58,8 @@ modules:
         --no-build-isolation .
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/10/8b/c265f4823726ab832de836cdd184d0986dcf94480f81e8739692a7ac7af2/numpy-2.4.3.tar.gz
-        sha256: 483a201202b73495f00dbc83796c6ae63137a9bdade074f7648b3e32613412dd
+        url: https://files.pythonhosted.org/packages/d7/9f/b8cef5bffa569759033adda9481211426f12f53299629b410340795c2514/numpy-2.4.4.tar.gz
+        sha256: 2d390634c5182175533585cc89f3608a4682ccb173cc9bb940b2881c8d6f8fa0
         x-checker-data:
           type: pypi
           name: numpy
@@ -145,8 +145,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/pybind/pybind11
-        tag: v3.0.2
-        commit: 45fab4087eaaff234227a10cf7845e8b07f28a98
+        tag: v3.0.3
+        commit: 1b4990838904501de7110d27e96c0a4152029156
         x-checker-data:
           type: git
           tag-pattern: ^v?([\d.]+)$
@@ -173,8 +173,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/veusz/veusz
-        tag: veusz-4.2
-        commit: fc636ff2976e7c95545170b657c08719766dfa2c
+        tag: veusz-4.2.1
+        commit: b637be1018a473fa829d097ce48b8164078dd365
         x-checker-data:
           type: git
           tag-pattern: ^(veusz-[\d.]+)$
