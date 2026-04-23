@@ -38,8 +38,8 @@ modules:
       - -DTARGET=GENERIC
     sources:
       - type: archive
-        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.32.tar.gz
-        sha256: f8a1138e01fddca9e4c29f9684fd570ba39dedc9ca76055e1425d5d4b1a4a766
+        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.33.tar.gz
+        sha256: 6761af1d9f5d353ab4f0b7497be2643313b36c8f31caec0144bfef198e71e6ab
         x-checker-data:
           type: anitya
           project-id: 2540
@@ -58,8 +58,8 @@ modules:
         --no-build-isolation .
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/10/8b/c265f4823726ab832de836cdd184d0986dcf94480f81e8739692a7ac7af2/numpy-2.4.3.tar.gz
-        sha256: 483a201202b73495f00dbc83796c6ae63137a9bdade074f7648b3e32613412dd
+        url: https://files.pythonhosted.org/packages/d7/9f/b8cef5bffa569759033adda9481211426f12f53299629b410340795c2514/numpy-2.4.4.tar.gz
+        sha256: 2d390634c5182175533585cc89f3608a4682ccb173cc9bb940b2881c8d6f8fa0
         x-checker-data:
           type: pypi
           name: numpy
@@ -145,8 +145,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/pybind/pybind11
-        tag: v3.0.2
-        commit: 45fab4087eaaff234227a10cf7845e8b07f28a98
+        tag: v3.0.4
+        commit: d03662f0984f652b60e7ddce53d3868002275197
         x-checker-data:
           type: git
           tag-pattern: ^v?([\d.]+)$
@@ -173,8 +173,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/veusz/veusz
-        tag: veusz-4.2
-        commit: fc636ff2976e7c95545170b657c08719766dfa2c
+        tag: veusz-4.2.1
+        commit: b637be1018a473fa829d097ce48b8164078dd365
         x-checker-data:
           type: git
           tag-pattern: ^(veusz-[\d.]+)$
