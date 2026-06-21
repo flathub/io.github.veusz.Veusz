@@ -181,5 +181,3 @@ modules:
           tag-pattern: ^(veusz-[\d.]+)$
       - type: patch
         path: fix-qconfig-path.patch
-      - type: patch
-        path: fix-appdata.patch
