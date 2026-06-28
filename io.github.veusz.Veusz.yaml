@@ -38,8 +38,8 @@ modules:
       - -DTARGET=GENERIC
     sources:
       - type: archive
-        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.32.tar.gz
-        sha256: f8a1138e01fddca9e4c29f9684fd570ba39dedc9ca76055e1425d5d4b1a4a766
+        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.33.tar.gz
+        sha256: 6761af1d9f5d353ab4f0b7497be2643313b36c8f31caec0144bfef198e71e6ab
         x-checker-data:
           type: anitya
           project-id: 2540
@@ -58,8 +58,8 @@ modules:
         --no-build-isolation .
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/10/8b/c265f4823726ab832de836cdd184d0986dcf94480f81e8739692a7ac7af2/numpy-2.4.3.tar.gz
-        sha256: 483a201202b73495f00dbc83796c6ae63137a9bdade074f7648b3e32613412dd
+        url: https://files.pythonhosted.org/packages/e7/05/3d27272d30698dc0ecb7fdfaa41ad70303b444f81722bb99bce1d818638a/numpy-2.5.0.tar.gz
+        sha256: 5a129578019311b6e56bdd714250f19b518f7dceeeb8d1af5490f4942d3f891c
         x-checker-data:
           type: pypi
           name: numpy
@@ -109,8 +109,8 @@ modules:
       - --with-drivers=FILES
     sources:
       - type: archive
-        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10070/ghostscript-10.07.0.tar.xz
-        sha256: ddace4e1721f967a55039baff564840225e0baa1d4f5432247ca1ccd1473b7c1
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10071/ghostscript-10.07.1.tar.xz
+        sha256: 1cdb766de8db8f1e589c817f09c5855ea5f65dfc8540e465a69ac14c18416025
         x-checker-data:
           type: anitya
           project-id: 1157
@@ -145,8 +145,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/pybind/pybind11
-        tag: v3.0.2
-        commit: 45fab4087eaaff234227a10cf7845e8b07f28a98
+        tag: v3.0.4
+        commit: d03662f0984f652b60e7ddce53d3868002275197
         x-checker-data:
           type: git
           tag-pattern: ^v?([\d.]+)$
@@ -173,8 +173,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/veusz/veusz
-        tag: veusz-4.2
-        commit: fc636ff2976e7c95545170b657c08719766dfa2c
+        tag: veusz-4.2.1
+        commit: b637be1018a473fa829d097ce48b8164078dd365
         x-checker-data:
           type: git
           tag-pattern: ^(veusz-[\d.]+)$
