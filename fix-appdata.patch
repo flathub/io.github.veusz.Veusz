@@ -1,6 +1,6 @@
 diff -ruN a/support/veusz.appdata.xml c/support/veusz.appdata.xml
---- a/support/veusz.appdata.xml	2025-10-27 06:48:28.000000000 +0700
-+++ c/support/veusz.appdata.xml	2026-01-13 17:59:03.728911686 +0700
+--- a/support/veusz.appdata.xml	2026-04-04 00:00:00.000000000 +0000
++++ c/support/veusz.appdata.xml	2026-06-30 00:00:00.000000000 +0000
 @@ -2,7 +2,7 @@
  <!-- Copyright 2014 Jeremy Sanders <jeremy@jeremysanders.net> -->
  <component type="desktop-application">
@@ -10,12 +10,3 @@ diff -ruN a/support/veusz.appdata.xml c/support/veusz.appdata.xml
    <metadata_license>CC0-1.0</metadata_license>
    <project_license>GPL-2.0+</project_license>
    <name>Veusz</name>
-@@ -52,6 +52,8 @@
-   <url type="bugtracker">https://github.com/veusz/veusz/issues</url>
-   <content_rating type="oars-1.1"/>
-     <releases>
-+        <release version="4.2" date="2025-10-11">
-+        </release>
-         <release version="4.1" date="2025-06-13">
-         </release>
-         <release version="4.0" date="2025-06-01">
