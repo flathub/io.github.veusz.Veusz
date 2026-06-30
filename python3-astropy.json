@@ -7,23 +7,23 @@
     "sources": [
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/7b/92/2dce2d48347efc3346d08ca7995b152d242ebd170c571f7c9346468d8427/astropy-7.2.0.tar.gz",
-            "sha256": "ae48bc26b1feaeb603cd94bd1fa1aa39137a115fe931b7f13787ab420e8c3070"
+            "url": "https://files.pythonhosted.org/packages/94/d2/d2081156845793570dede8454cbe312dec7f337a842b437d00f48d65ecf4/astropy-8.0.0.tar.gz",
+            "sha256": "7f4de5db41f26f140433eddd78458abfc1c19b8037f9f8a89c33853cfba1fdc3"
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/9d/1d/9c0f809bf0706eed0f4cdb6d515d0a9acab44d903acf6c45f31a5cfcacc2/astropy_iers_data-0.2026.1.12.0.42.13-py3-none-any.whl",
-            "sha256": "1ed3e665ad8938cd4410ee205894ff6ca4d1d5bd6b0357a94cc39e55150398ba"
+            "url": "https://files.pythonhosted.org/packages/97/1e/75767a712dd23740273560df5b9dcd203362f5e5c6bea846d99a7175e233/astropy_iers_data-0.2026.6.22.1.23.34-py3-none-any.whl",
+            "sha256": "d96f5102426e7ba5f28d7aabf417a547d912482afa97c24430f5c9fe9b6a884d"
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/24/62/ae72ff66c0f1fd959925b4c11f8c2dea61f47f6acaea75a08512cdfe3fed/numpy-2.4.1.tar.gz",
-            "sha256": "a1ceafc5042451a858231588a104093474c6a5c57dcc724841f5c888d237d690"
+            "url": "https://files.pythonhosted.org/packages/e7/05/3d27272d30698dc0ecb7fdfaa41ad70303b444f81722bb99bce1d818638a/numpy-2.5.0.tar.gz",
+            "sha256": "5a129578019311b6e56bdd714250f19b518f7dceeeb8d1af5490f4942d3f891c"
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/20/12/38679034af332785aac8774540895e234f4d07f7545804097de4b666afd8/packaging-25.0-py3-none-any.whl",
-            "sha256": "29572ef2b1f17581046b3a2227d5c611fb25ec70ca1ba8554b24b0e69331a484"
+            "url": "https://files.pythonhosted.org/packages/df/b2/87e62e8c3e2f4b32e5fe99e0b86d576da1312593b39f47d8ceef365e95ed/packaging-26.2-py3-none-any.whl",
+            "sha256": "5fc45236b9446107ff2415ce77c807cee2862cb6fac22b8a73826d0693b0980e"
         },
         {
             "type": "file",
