@@ -38,8 +38,8 @@ modules:
       - -DTARGET=GENERIC
     sources:
       - type: archive
-        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.33.tar.gz
-        sha256: 6761af1d9f5d353ab4f0b7497be2643313b36c8f31caec0144bfef198e71e6ab
+        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.34.tar.gz
+        sha256: cd7e129868320cc2d033afa920e31202dfe0b8066a5b66661900ccc0f197dfed
         x-checker-data:
           type: anitya
           project-id: 2540
@@ -58,8 +58,8 @@ modules:
         --no-build-isolation .
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/e7/05/3d27272d30698dc0ecb7fdfaa41ad70303b444f81722bb99bce1d818638a/numpy-2.5.0.tar.gz
-        sha256: 5a129578019311b6e56bdd714250f19b518f7dceeeb8d1af5490f4942d3f891c
+        url: https://files.pythonhosted.org/packages/13/01/11703282db468b85f6f7b8c7f22d058de5970d5c7e60a3a8aaa313c3de36/numpy-2.5.3.tar.gz
+        sha256: df2d5874ff183595a4ba404edd04f6bd9b5505c1d7708573f6a6c17489a67563
         x-checker-data:
           type: pypi
           name: numpy
@@ -145,8 +145,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/pybind/pybind11
-        tag: v3.0.4
-        commit: d03662f0984f652b60e7ddce53d3868002275197
+        tag: v3.1.0
+        commit: 97bf890db679505a14dfe547a5e77bb2bd05dc90
         x-checker-data:
           type: git
           tag-pattern: ^v?([\d.]+)$
