@@ -114,7 +114,7 @@ modules:
         x-checker-data:
           type: anitya
           project-id: 1157
-          url-template: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${major}0$minor$patch/ghostscript-$version.tar.xz
+          url-template: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${major}${minor}${patch}/ghostscript-$version.tar.xz
       - type: shell
         commands:
           - rm -rf tesseract leptonica gpdl cups/libs jpeg libpng openjpeg tiff zlib
